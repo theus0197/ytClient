@@ -16,18 +16,18 @@
                 <div class="color-scheme">
                   <p style="font-size: 14px; font-weight: bold;">Colors</p><hr>
                   <div class="opts">
-                      <label for="headerMain">Header Pagina Principal</label>
-                      <input type="text" value="{{ configuracao }}" placeholder="Cor..." name="headerMain">
+                      <label for="headerMain">Header Main Page</label>
+                      <input type="text" value="{{ configuracao }}" placeholder="Color..." name="headerMain">
                   </div>
                   <div class="opts">
-                      <label for="">Cor primaria</label>
-                      <input type="text" value={{ primarycolor }} placeholder="Cor..." name="primaryColor">
+                      <label for="">Primary Color</label>
+                      <input type="text" value={{ primarycolor }} placeholder="Color..." name="primaryColor">
                   </div>
                 </div>
                 <div class="color-scheme">
-                  <p style="font-size: 14px; font-weight: bold;">Videos config</p><hr>
+                  <p style="font-size: 14px; font-weight: bold;">Videos Config</p><hr>
                   <div class="opts">
-                      <label for="headerMain">Rate limit videos</label>
+                      <label for="headerMain">Rate Limit Videos</label>
                       <input id="ratelimit" type="text" value="{{ ratelimit }}" placeholder="Example: 20" name="rateLimit">
                   </div>
                 </div>
@@ -36,7 +36,7 @@
                   <div class="opts">
                     <form method="post" enctype="multipart/form-data" action="/panel/configs/upload/">
                       <input type="file" name="file" required>
-                      <button type="submit" style="margin-top: 20px!important;">Enviar</button>
+                      <button type="submit" style="margin-top: 20px!important;">Send</button>
                   </form>
                   </div>
                   <div class="opts">
@@ -45,7 +45,7 @@
                 </div>
             </div>
             <div class="btn-div">
-                <button id="save-changes">SALVAR ALTERAÇÕES</button>
+                <button id="save-changes">Save Change</button>
             </div>
             
         </div>

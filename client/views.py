@@ -262,8 +262,7 @@ def likeVideo(request, id):
 def webhook_handler(request):
     if request.method == 'POST':
         data = request.body.decode('utf-8')
-        # Processar os dados do webhook aqui
-        # ...
+        controller.hotmart_webhook()
         return JsonResponse({'message': 'Webhook received successfully'})
     else:
         return JsonResponse({'error': 'Invalid request method'})
