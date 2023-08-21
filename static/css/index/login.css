@@ -3,7 +3,7 @@
     height: fit-content;
     background-color: var(--color-default);
     border-radius: 1rem;
-    padding: 1rem .5rem;
+    padding: 4rem .5rem;
 }
 
 a{
@@ -29,7 +29,7 @@ a{
 
 .card-container-title img{
     margin-top: 2rem;
-    width: 21rem;
+    width: 10rem;
     height: auto;
 }
 

@@ -1,0 +1,252 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.more-videos {
+    margin-right: 20px;
+    padding-bottom: .5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.broken-line{
+    width: 50%;
+    background-color: #333;
+    height: .25rem;
+    margin: 2.5rem 0;
+}
+
+.more-videos-container {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Gap between videos */
+}
+
+.next-video {
+    display: flex;
+    gap: 10px; /* Gap between thumbnail and title */
+    overflow: hidden;
+    cursor: pointer;
+    width: 55rem;
+    transition: 1s;
+}
+
+.next-video:hover .video{
+    scale: 1.1;
+}
+
+.video {
+    width: 300px; /* Adjust the width as needed */
+    height: 180px; /* Adjust the height as needed */
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.description{
+    width: 90%;
+    height: 7rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: .75rem;
+}
+
+.title-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    margin-top: .35rem;
+}
+
+.title-main span{
+    font-size: 1.30rem;
+}
+
+.title {
+    flex: 1; /* Occupy remaining space */
+    padding: 10px;
+    display: flex;
+    position: relative;
+}
+
+.details:not(:first-child) {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 10px;
+}
+
+.views,
+.likes {
+    font-size: 18px !important;
+    color: #888;
+}
+
+.likes {
+    color: #000;
+}
+
+.container-video {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.main-video{
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+.main-video iframe{
+    width: 100rem;
+    height: 58rem;
+}
+.main-video iframe, .no-click, .main-video {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+.no-click{
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+    opacity: 0.5;
+}
+
+.container-no-click{
+    position: relative;
+    width:100%;
+    height: 100%;
+}
+
+#timer-second{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 1rem;
+    margin-right: .5rem;
+    color: #fff;
+    font-size: 2.1rem;
+    font-weight: bold;
+}
+
+.details-main {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.likes-main {
+    position: relative;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #f7f7f7;
+    padding: 1.25rem 2rem;
+    border-radius: 10rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.85);
+    margin-top: .55rem;
+}
+
+.container-like-main{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.title-main span{
+    width: 70%;
+}
+
+.likes{
+    user-select: none;
+}
+
+#timer{
+    display: none;
+}
+
+.tt{
+    font-size: 1.25rem;
+    font-weight: 600;
+    width: 95%;
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        display: block;
+    }
+
+    .container-video {
+        width: 100%;
+        padding: 0;
+    }
+
+    .main-video iframe, .no-click, .main-video {
+        border-radius: 0px 0px 0px 0px!important;
+    }
+
+    .main-video iframe, .no-click, .main-video {
+        box-shadow: none;
+    }
+
+    .details-main {
+        right: 10px;
+    }
+
+    .more-videos {
+        margin-left: 20px;
+    }
+
+    .video {
+        width: 100%!important;
+        height: 180px!important;
+    }
+
+    .next-video {
+        display: block;
+
+    }
+    
+    .details {
+        right: 0;
+        top: 0;
+    }
+
+    .tt {
+        width: 80%;
+    }
+
+    .main-body {
+        display: block;
+    }
+}
+  

@@ -31,7 +31,7 @@ function signup(){
                     var containers = response.containers;
                     document.getElementById('uid').value = containers.uid
                     document.getElementById('input-billing').value = containers.copy
-                    document.getElementById('qrcode-billing').src = '/media/qrcode/' + containers.name_image
+                    document.getElementById('qrcode-billing').src = containers.name_image
                     document.getElementById('amount').innerText = containers.amount
                     job_payment()
                 }else{
@@ -56,10 +56,10 @@ document.getElementsByClassName('payment-close-btn')[0].addEventListener('click'
 })
 
 document.getElementsByClassName('btn-copy')[0].addEventListener('click', function(){
-    var copyText = document.getElementById('input-billing');
+    const copyText = document.getElementById('input-billing');
     copyText.select();
-    copyText.setSelectionRange(0, 99999);
-    navigator.clipboard.writeText(copyText.value);
+    copyText.setSelectionRange(0,9999);
+    navigator.clipboard.writeText(String(copyText.value));
     alert('Código Pix copiado!')
 })
 

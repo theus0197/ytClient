@@ -3,13 +3,12 @@ section{
 }
 
 #image-logo{
-    width:18rem;
+    width: 6rem;
 }
 
 .main{
     width:100%;
     min-height: 100vh;
-    background-color: var(--dark-blue);
 }
 
 .main-header{
@@ -140,16 +139,15 @@ section{
 .main-body{
     width: 100%;
     height: 88vh;
-    /*overflow: hidden;*/
-    display: flex;
+    overflow: hidden;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 .main-body-center{
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: 90%;
 }
 
 .main-video-center{
@@ -254,16 +252,6 @@ section{
     background-color: var(--green);
 }
 
-.menu-suspend-options{
-    width:95%;
-    height: 97%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--color-default);
-}
-
 .menu-suspend-options ul{
     list-style-type: none;
 }
@@ -284,9 +272,7 @@ section{
     cursor: pointer;
 }
 
-.menu-suspend-options a:hover{
-    color: var(--light-blue);
-}
+
 
 .modal-alerts-center{
     width: 60%;
@@ -332,6 +318,105 @@ section{
     text-align: center;
 }
 
+.modal-alert-timer{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(12,21,29,.5);
+}
+
+.modal-alert-timer-center{
+    width: 40rem;
+    height: 90%;
+    overflow: hidden;
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6f6f6;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 12px rgba(12,21,29,.9);
+}
+
+.modal-alert-timer-container{
+    position: relative;
+    width:100%;
+    height: 100%;
+    width: 95%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    overflow: auto;
+}
+
+.status-report-timer{
+    text-align: center;
+    margin: .5rem 0;
+    color: var(--green);
+    font-family: 'Sora';
+    font-size: 2.1rem;
+    font-weight: bold;
+    user-select: none;
+
+}
+
+.announcement img{
+    width: 100%;
+    border-radius: 1rem;
+
+}
+
+.btn-more-info{
+    width:100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-more-info a{
+    color: #fff;
+    font-family: 'Sora';
+    font-size: 2.1rem;
+    font-weight: bold;
+    letter-spacing: .25rem;
+    text-decoration: none;
+    width:100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.caption{
+    width:90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.1rem;
+    margin-top: 1rem;
+    background-image: linear-gradient(90deg, #09C61A 0%, #019C1B 100%);
+    border-radius: 1rem;
+    padding: .5rem 0;
+    box-shadow: 0px 0px 12px rgba(12,21,29,.9);
+    animation: pulse 2s infinite alternate;
+}
+
+.my-amount{
+    margin-left: 1rem;
+}
+
 @media only screen and (max-width: 800px){
     .modal-alerts-center{
         width:80% !important;
@@ -339,5 +424,63 @@ section{
     .card-main{
         width: 100% !important;
     }
+    .card-info{
+        height: 100%;
+        width: 100%;
+    }
+    .modal-alert-timer-center{
+        width: 90%;
+    }
 }
 
+@keyframes pulse {
+	0% {
+		transform: scale(0.9);
+	}
+
+	70% {
+		transform: scale(1);
+		
+	}
+
+	100% {
+		transform: scale(0.9);
+		
+	}
+}
+
+.click-to-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 2;
+    width: 7rem;
+}
+
+.modal-box {
+    width: 400px;
+    height: 430px;
+    background-color: white;
+    position: relative;
+    border-radius: 10px;
+}
+
+.close-menu svg{
+    width: 25px;
+}
+
+.close-menu {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+.menu-suspend-options{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+}
