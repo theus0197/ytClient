@@ -1,0 +1,253 @@
+
+.apps{
+    width: 100%;
+    min-height: 100vh;
+    max-height: auto;
+}
+
+.app-user-create{
+    width:100%;
+
+}
+
+.app-form{
+    margin-top: 2.5rem;
+    margin-left: 1rem;
+}
+
+.app-form h1{
+    font-size: 3.1rem;
+    letter-spacing: .10rem;;
+    font-weight: bold;
+    color: #fff;
+    user-select: none;
+}
+
+.container-entries{
+    margin-left: 1rem;
+    margin-top:1.5rem;
+    width:fit-content;
+}
+
+.container-entry{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.container-entry h3{
+    width: 20rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.container-input{
+    border-bottom: 2px solid #fff;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.container-entry input{
+    width: 21rem;
+    font-size: 1.6rem;
+    letter-spacing: .10rem;
+    color: #fff;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    margin-bottom: .5rem;
+    margin-left: 1rem;
+}
+
+.container-form-btn{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: 1.75rem;
+}
+
+.btn-form{
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: .05rem;
+    color: #fff;
+    background-color: #f12c4c;
+    box-shadow: 0px 0px 10px #000;
+    padding: .25rem 3rem;
+    border-radius: 1rem;
+    user-select: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-form:hover{
+    background-color: rgba(173, 33, 55, .9)
+}
+
+.container-results{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.result{
+    width: 60rem;
+    max-height: 25rem;
+    background-color: #f7f7f7;
+    margin-top: 2rem;
+    box-shadow: 0px 0px 10px #000;
+    border-radius: 1rem;
+    overflow: hidden;
+    padding: 0 .5rem;
+    padding-bottom: .5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-result{
+    width:100%;
+    height:auto;
+    overflow: auto;
+}
+
+.result-query{
+    display:flex;
+    flex-direction: row;
+    box-shadow: 0px 0px 10px #000;
+    margin: 1rem 0;
+    border-radius: 1rem;
+    background-color: #f12c4c;
+}
+
+.cell-table{
+    width: 20rem;
+    height: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.cell-table h3{
+    font-size: 1.5rem;
+    letter-spacing: .05rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.cell-table .status{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #37F148;
+}
+
+.cell-table svg{
+    width: 3rem;
+    height: 3rem;
+}
+
+.cell-table svg path{
+    fill: #fff;
+}
+
+.btn-delete{
+    cursor: pointer;
+    padding: 0 2rem;
+    transition: .3s;
+}
+
+.btn-delete:hover svg path{
+    fill: #0f1923;
+}
+
+.status-input{
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.green{
+    background-color: #37F148;
+}
+
+.red{
+    background-color: #F12C4C;
+}
+
+.container-input-logo{
+    border: none !important;
+    margin-bottom: 3rem;
+}
+
+.container-input .input-logo-image{
+    display:none;
+}
+
+.container-input .select-logo-rounded{
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, .9);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 999px) {
+    .container-header {
+        width: 100%;
+        padding-bottom: 1rem;
+    }
+    .container-header li{
+        margin-top: .25rem;
+    }
+    .menu-buttons .btns{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .app-form h1{
+        font-size: 3.6rem;
+    }
+    .container-entries{
+        width: 90%;
+    }
+    .container-entry h3{
+        width:10rem;
+        font-size: 1.8rem;
+    }
+    .container-entry input{
+        width: 100%;
+    }
+    .btn-form{
+        font-size: 2.4rem;
+    }
+    .container-results{
+        width: 95%;
+    }
+    .result{
+        width: 100%;
+    }
+    .cell-table:first-child{
+        align-items: inherit;
+    }
+    .cell-table:first-child h3{
+        margin-left: .5rem;
+    }
+    .app-search-form{
+        padding-bottom: 5rem;
+    }
+}
+

@@ -1,0 +1,99 @@
+{%extends "index/home.html"%}
+{%load static%}
+
+{%block titleHome%}Login{%endblock%}
+
+{%block staticHome%}
+    <link rel='stylesheet' href='{%static "css/index/login.css"%}'>
+{%endblock%}
+
+{%block contentHome%}
+    <div class="card">
+        <div class="card-container">
+            <div class="card-container-title card-container-info">
+                <img src="media/logo.png">
+            </div>
+            <div class="card-container-content card-container-info">
+                <div class="container-content-inputs content">
+                    <div class="container-content-inputs">
+                        <div class="center-container-content-inputs">
+                            <h3>Email</h3>
+                            <div class="container-input">
+                                <div class="container-input-image">
+                                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                    width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+                                    preserveAspectRatio="xMidYMid meet">
+                                        <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                        fill="#000000" stroke="none">
+                                            <path d="M340 4344 c-30 -8 -59 -19 -65 -25 -11 -11 2161 -2190 2207 -2215 35
+                                            -18 121 -18 156 0 46 25 2218 2204 2207 2215 -6 6 -37 17 -70 25 -53 14 -298
+                                            16 -2220 15 -1871 0 -2167 -2 -2215 -15z"/>
+                                            <path d="M23 4048 c-17 -50 -18 -123 -18 -1488 0 -1365 1 -1438 18 -1487 10
+                                            -29 22 -53 25 -53 4 0 354 347 777 770 l770 770 -770 770 c-423 424 -773 770
+                                            -777 770 -3 0 -15 -24 -25 -52z"/>
+                                            <path d="M4295 3330 l-770 -770 770 -770 c423 -423 773 -770 777 -770 3 0 15
+                                            24 25 53 17 49 18 122 18 1487 0 1365 -1 1438 -18 1488 -10 28 -22 52 -25 52
+                                            -4 0 -354 -346 -777 -770z"/>
+                                            <path d="M1030 1575 c-495 -495 -761 -768 -755 -774 6 -6 37 -17 70 -25 53
+                                            -14 299 -16 2215 -16 1916 0 2162 2 2215 16 33 8 64 19 70 25 6 6 -260 279
+                                            -757 776 l-767 767 -238 -235 c-218 -216 -245 -239 -317 -275 l-80 -39 -126 0
+                                            -126 0 -80 39 c-72 36 -100 60 -315 273 -129 128 -237 233 -240 233 -2 0 -348
+                                            -344 -769 -765z"/>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <input type="text" name="email" id="email" class="form-control" placeholder="Seu email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-content-inputs">
+                        <div class="center-container-content-inputs">
+                            <h3>Senha</h3>
+                            <div class="container-input">
+                                <div class="container-input-image">
+                                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                    width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+                                    preserveAspectRatio="xMidYMid meet">
+                                        <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                        fill="#000000" stroke="none">
+                                            <path d="M2380 5109 c-663 -64 -1260 -524 -1490 -1149 -60 -163 -105 -377
+                                            -112 -540 l-3 -55 -80 -6 c-132 -10 -230 -75 -284 -189 l-26 -55 0 -1435 0
+                                            -1435 23 -46 c36 -74 87 -125 160 -161 l67 -33 1925 0 1925 0 67 33 c73 36
+                                            124 87 160 161 l23 46 0 1435 0 1435 -26 55 c-54 114 -152 179 -284 189 l-80
+                                            6 -3 55 c-11 233 -80 498 -187 709 -334 665 -1033 1052 -1775 980z m355 -713
+                                            c345 -63 632 -275 788 -583 57 -111 107 -301 107 -404 l0 -49 -1070 0 -1070 0
+                                            0 54 c0 100 50 288 107 399 133 263 381 471 658 553 151 44 335 56 480 30z
+                                            m20 -1635 c295 -99 475 -423 400 -716 -36 -138 -107 -250 -217 -340 l-58 -47
+                                            0 -429 c0 -490 -1 -497 -82 -576 -75 -72 -117 -88 -238 -88 -121 0 -163 16
+                                            -238 88 -81 79 -82 86 -82 576 l0 429 -57 47 c-150 122 -233 293 -233 477 0
+                                            105 15 168 61 265 134 280 450 413 744 314z"/>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Sua senha">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-content-options content">
+                    <div class="center-content-options">
+                        <a href="">
+                            <span>Esqueceu sua senha?</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="container-content-btns content">
+                    <div class="center-content-btns">
+                        <div class="container-btn">
+                            <div class="btn-action btn-signin green">Entrar</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{%endblock%}
+
+{%block scriptsHome%}
+    <script src="{%static 'js/index/login.js'%}"></script>
+{%endblock%}

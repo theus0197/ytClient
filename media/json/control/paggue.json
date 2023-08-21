@@ -1,0 +1,9 @@
+{
+    "status": true,
+    "client_key": "13",
+    "client_secret": "7871",
+    "sales": {
+        "original": "49,99",
+        "dev": "49.99"
+    }
+}

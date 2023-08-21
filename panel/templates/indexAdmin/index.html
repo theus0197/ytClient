@@ -1,0 +1,127 @@
+{%extends "indexAdmin/home.html"%}
+{%load static%}
+
+{%block titleHome%}Login Admin{%endblock%}
+
+{%block staticHome%}
+    <link rel='stylesheet' href='{%static "css/indexAdmin/index.css"%}'>
+    {%block staticIndex%}
+        <link rel='stylesheet' href='{%static "css/indexAdmin/temp.css"%}'>
+    {%endblock%}
+{%endblock%}
+
+{%block contentHome%}
+    <div class="application">
+        <div class="container-header">
+            <div class="container-header-center">
+                <ul>
+                    {% comment %} <li>
+                        <a href="/panel/">Home</a>
+                    </li> {% endcomment %}
+                    <li>
+                        <a href="/panel/users">Usuários</a>
+                    </li>
+                    {% comment %} <li>
+                        <a href="/panel/control">GateWay</a>
+                    </li> {% endcomment %}
+                    <li>
+                        <a href="/panel/videos">Vídeos</a>
+                    </li>
+                    <li>
+                        <a href="/panel/configs">Configurações</a>
+                    </li>
+                    <li>
+                        <a href="/">App</a>
+                    </li>
+                </ul>
+                <div class="menu-buttons">
+                    <div class="btns">
+                        <a href="/panel/api/logout">
+                            <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                            width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+                            preserveAspectRatio="xMidYMid meet">
+                                <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                fill="#000000" stroke="none">
+                                    <path d="M773 4635 c-199 -36 -371 -131 -514 -283 -116 -122 -189 -253 -232
+                                    -414 l-22 -83 0 -1295 0 -1295 22 -83 c43 -161 116 -292 232 -414 122 -130
+                                    276 -223 446 -270 78 -22 96 -22 693 -26 682 -3 649 -7 678 63 15 36 19 206 8
+                                    277 -6 32 -13 41 -48 58 -41 19 -60 20 -597 20 -605 0 -642 3 -741 57 -67 36
+                                    -185 154 -220 219 -59 110 -58 67 -58 1394 0 1327 -1 1284 58 1394 35 65 153
+                                    183 220 219 99 54 136 57 747 57 427 0 566 3 585 13 49 24 61 68 58 214 -3
+                                    130 -4 133 -31 160 l-27 28 -593 2 c-451 1 -609 -2 -664 -12z"/>
+                                    <path d="M3100 4540 c-69 -12 -121 -52 -154 -117 -14 -28 -16 -91 -16 -528 l0
+                                    -495 -730 0 c-500 0 -745 -4 -781 -11 -74 -16 -142 -84 -158 -158 -15 -72 -15
+                                    -1270 0 -1342 16 -74 84 -142 158 -158 36 -7 281 -11 781 -11 l730 0 0 -495
+                                    c0 -468 1 -498 19 -533 52 -101 180 -144 277 -93 23 11 414 395 956 938 967
+                                    969 938 937 938 1023 0 86 29 54 -938 1023 -505 505 -930 926 -947 934 -40 22
+                                    -92 30 -135 23z"/>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-content">
+            {%block contentIndex%}
+                <div class="container-content-sell">
+                    <div class="container-content-sell-center">
+                        <div class="sell-container">
+                            <div class="container-content-sell-title">
+                                <h3>Métricas de Vendas</h3>
+                            </div>
+                            <div class="container-content-sell-body">
+                                <div class="sell-body-container">
+                                    <div class="sell-legends">
+                                        <div class="sell-legends-container">
+                                            <div class="sell-legends-circle legend-wb"></div>
+                                            <span>Site</span>
+                                        </div>
+                                        <div class="sell-legends-container">
+                                            <div class="sell-legends-circle legend-wp"></div>
+                                            <span>WhatsApp</span>
+                                        </div>
+                                        <div class="sell-legends-container">
+                                            <div class="sell-legends-circle legend-bd"></div>
+                                            <span>Brindes</span>
+                                        </div>
+                                    </div>
+                                    <div class="sell-infos">
+                                        <div class="sell-infos-center">
+                                            <div class="infos">
+                                                <div class="container-sell-info container-wb">
+                                                    <div class="container-sell-info-center">
+                                                        <h3 class="amount">R$ <span class="amount-wb">{{index.containers.amount_website}}</span></h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="infos">
+                                                <div class="container-sell-info container-wp">
+                                                    <div class="container-sell-info-center">
+                                                        <h3 class="amount">R$ <span class="amount-wp">{{index.containers.amount_whatsapp}}</span></h3>  
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="infos">
+                                                <div class="container-sell-info container-bd">
+                                                    <div class="container-sell-info-center">
+                                                        <h3 class="amount">R$ <span class="amount-bd">-</span></h3>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {%endblock%}
+        </div>
+    </div>
+{%endblock%}
+
+{%block scriptsHome%}
+    <script src="{%static 'js/indexAdmin/index.js'%}"></script>
+    {%block scriptsIndex%}{%endblock%}
+{%endblock%}

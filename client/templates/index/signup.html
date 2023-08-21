@@ -1,0 +1,276 @@
+{%extends "index/home.html"%}
+{%load static%}
+
+{%block titleHome%}Login{%endblock%}
+
+{%block staticHome%}
+    <link rel='stylesheet' href='{%static "css/index/login.css"%}'>
+{%endblock%}
+
+{%block contentHome%}
+    <div class="card">
+        <div class="card-container">
+            <div class="card-container-title card-container-info">
+                <img src="{%static 'images/index/logo-oma.png'%}">
+            </div>
+            <div class="card-container-content card-container-info">
+                <div class="container-content-inputs content">
+                    <div class="container-content-inputs">
+                        <div class="center-container-content-inputs">
+                            <h3>Nome Completo</h3>
+                            <div class="container-input">
+                                <div class="container-input-image">
+                                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                    width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+                                    preserveAspectRatio="xMidYMid meet">
+                                        <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                        fill="#000000" stroke="none">
+                                            <path d="M340 4344 c-30 -8 -59 -19 -65 -25 -11 -11 2161 -2190 2207 -2215 35
+                                            -18 121 -18 156 0 46 25 2218 2204 2207 2215 -6 6 -37 17 -70 25 -53 14 -298
+                                            16 -2220 15 -1871 0 -2167 -2 -2215 -15z"/>
+                                            <path d="M23 4048 c-17 -50 -18 -123 -18 -1488 0 -1365 1 -1438 18 -1487 10
+                                            -29 22 -53 25 -53 4 0 354 347 777 770 l770 770 -770 770 c-423 424 -773 770
+                                            -777 770 -3 0 -15 -24 -25 -52z"/>
+                                            <path d="M4295 3330 l-770 -770 770 -770 c423 -423 773 -770 777 -770 3 0 15
+                                            24 25 53 17 49 18 122 18 1487 0 1365 -1 1438 -18 1488 -10 28 -22 52 -25 52
+                                            -4 0 -354 -346 -777 -770z"/>
+                                            <path d="M1030 1575 c-495 -495 -761 -768 -755 -774 6 -6 37 -17 70 -25 53
+                                            -14 299 -16 2215 -16 1916 0 2162 2 2215 16 33 8 64 19 70 25 6 6 -260 279
+                                            -757 776 l-767 767 -238 -235 c-218 -216 -245 -239 -317 -275 l-80 -39 -126 0
+                                            -126 0 -80 39 c-72 36 -100 60 -315 273 -129 128 -237 233 -240 233 -2 0 -348
+                                            -344 -769 -765z"/>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Seu nome completo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-content-inputs">
+                        <div class="center-container-content-inputs">
+                            <h3>Telefone</h3>
+                            <div class="container-input">
+                                <div class="container-input-image">
+                                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                    width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+                                    preserveAspectRatio="xMidYMid meet">
+                                        <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                        fill="#000000" stroke="none">
+                                            <path d="M340 4344 c-30 -8 -59 -19 -65 -25 -11 -11 2161 -2190 2207 -2215 35
+                                            -18 121 -18 156 0 46 25 2218 2204 2207 2215 -6 6 -37 17 -70 25 -53 14 -298
+                                            16 -2220 15 -1871 0 -2167 -2 -2215 -15z"/>
+                                            <path d="M23 4048 c-17 -50 -18 -123 -18 -1488 0 -1365 1 -1438 18 -1487 10
+                                            -29 22 -53 25 -53 4 0 354 347 777 770 l770 770 -770 770 c-423 424 -773 770
+                                            -777 770 -3 0 -15 -24 -25 -52z"/>
+                                            <path d="M4295 3330 l-770 -770 770 -770 c423 -423 773 -770 777 -770 3 0 15
+                                            24 25 53 17 49 18 122 18 1487 0 1365 -1 1438 -18 1488 -10 28 -22 52 -25 52
+                                            -4 0 -354 -346 -777 -770z"/>
+                                            <path d="M1030 1575 c-495 -495 -761 -768 -755 -774 6 -6 37 -17 70 -25 53
+                                            -14 299 -16 2215 -16 1916 0 2162 2 2215 16 33 8 64 19 70 25 6 6 -260 279
+                                            -757 776 l-767 767 -238 -235 c-218 -216 -245 -239 -317 -275 l-80 -39 -126 0
+                                            -126 0 -80 39 c-72 36 -100 60 -315 273 -129 128 -237 233 -240 233 -2 0 -348
+                                            -344 -769 -765z"/>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <input type="text" name="phone" id="phone" class="form-control" placeholder="Seu telefone">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-content-inputs">
+                        <div class="center-container-content-inputs">
+                            <h3>Email</h3>
+                            <div class="container-input">
+                                <div class="container-input-image">
+                                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                    width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+                                    preserveAspectRatio="xMidYMid meet">
+                                        <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                        fill="#000000" stroke="none">
+                                            <path d="M340 4344 c-30 -8 -59 -19 -65 -25 -11 -11 2161 -2190 2207 -2215 35
+                                            -18 121 -18 156 0 46 25 2218 2204 2207 2215 -6 6 -37 17 -70 25 -53 14 -298
+                                            16 -2220 15 -1871 0 -2167 -2 -2215 -15z"/>
+                                            <path d="M23 4048 c-17 -50 -18 -123 -18 -1488 0 -1365 1 -1438 18 -1487 10
+                                            -29 22 -53 25 -53 4 0 354 347 777 770 l770 770 -770 770 c-423 424 -773 770
+                                            -777 770 -3 0 -15 -24 -25 -52z"/>
+                                            <path d="M4295 3330 l-770 -770 770 -770 c423 -423 773 -770 777 -770 3 0 15
+                                            24 25 53 17 49 18 122 18 1487 0 1365 -1 1438 -18 1488 -10 28 -22 52 -25 52
+                                            -4 0 -354 -346 -777 -770z"/>
+                                            <path d="M1030 1575 c-495 -495 -761 -768 -755 -774 6 -6 37 -17 70 -25 53
+                                            -14 299 -16 2215 -16 1916 0 2162 2 2215 16 33 8 64 19 70 25 6 6 -260 279
+                                            -757 776 l-767 767 -238 -235 c-218 -216 -245 -239 -317 -275 l-80 -39 -126 0
+                                            -126 0 -80 39 c-72 36 -100 60 -315 273 -129 128 -237 233 -240 233 -2 0 -348
+                                            -344 -769 -765z"/>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <input type="text" name="email" id="email" class="form-control" placeholder="Seu email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-content-inputs">
+                        <div class="center-container-content-inputs">
+                            <h3>Senha</h3>
+                            <div class="container-input">
+                                <div class="container-input-image">
+                                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                    width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+                                    preserveAspectRatio="xMidYMid meet">
+                                        <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                        fill="#000000" stroke="none">
+                                            <path d="M2380 5109 c-663 -64 -1260 -524 -1490 -1149 -60 -163 -105 -377
+                                            -112 -540 l-3 -55 -80 -6 c-132 -10 -230 -75 -284 -189 l-26 -55 0 -1435 0
+                                            -1435 23 -46 c36 -74 87 -125 160 -161 l67 -33 1925 0 1925 0 67 33 c73 36
+                                            124 87 160 161 l23 46 0 1435 0 1435 -26 55 c-54 114 -152 179 -284 189 l-80
+                                            6 -3 55 c-11 233 -80 498 -187 709 -334 665 -1033 1052 -1775 980z m355 -713
+                                            c345 -63 632 -275 788 -583 57 -111 107 -301 107 -404 l0 -49 -1070 0 -1070 0
+                                            0 54 c0 100 50 288 107 399 133 263 381 471 658 553 151 44 335 56 480 30z
+                                            m20 -1635 c295 -99 475 -423 400 -716 -36 -138 -107 -250 -217 -340 l-58 -47
+                                            0 -429 c0 -490 -1 -497 -82 -576 -75 -72 -117 -88 -238 -88 -121 0 -163 16
+                                            -238 88 -81 79 -82 86 -82 576 l0 429 -57 47 c-150 122 -233 293 -233 477 0
+                                            105 15 168 61 265 134 280 450 413 744 314z"/>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Sua senha">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-content-btns content">
+                    <div class="center-content-btns">
+                        <div class="container-btn">
+                            <div class="btn-action btn-signup green">Comprar Sistema (Pix)</div>
+                        </div>
+                        <div class="container-btn">
+                            <a href="/signin">
+                                <div class="btn-action btn-signin red">Entrar</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-payment-background">
+        <div class="modal-payment-container">
+            <div class="modal-payment-center">
+                <div class="payment-card">
+                    <div class="payment-card-center">
+                        <div class="payment-logo">
+                            <div class="payment-logo-center">
+                                <img src="{%static 'images/index/logo-oma.png'%}">
+                            </div>
+                        </div>
+                        <div class="payment-title">
+                            <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                             width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+                             preserveAspectRatio="xMidYMid meet">
+                                <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                fill="#000000" stroke="none">
+                                    <path d="M2455 4667 c-87 -22 -148 -58 -214 -126 -59 -60 -157 -224 -1039
+                                    -1731 -536 -916 -988 -1694 -1005 -1730 -40 -84 -49 -207 -22 -306 44 -162
+                                    186 -292 354 -324 74 -14 3988 -14 4062 0 169 32 310 161 354 324 22 80 17
+                                    220 -10 284 -33 81 -1993 3417 -2035 3465 -85 96 -190 146 -320 153 -42 2 -97
+                                    -2 -125 -9z m246 -1054 c61 -34 120 -105 139 -166 18 -57 16 -103 -30 -879
+                                    -22 -373 -40 -682 -40 -688 0 -6 -77 -10 -210 -10 -193 0 -210 1 -210 18 0 9
+                                    -20 348 -44 752 -49 815 -49 794 15 886 58 85 146 126 255 121 57 -3 83 -10
+                                    125 -34z m-13 -2083 c68 -29 144 -112 167 -181 38 -114 2 -254 -85 -333 -65
+                                    -58 -122 -80 -210 -80 -127 0 -227 64 -282 179 -53 113 -34 243 49 335 95 106
+                                    230 136 361 80z"/>
+                                </g>
+                            </svg>
+                            <h3>Aguardando Pagamento</h3>
+                        </div>
+                        <div class="payment-subtitle">
+                            <p>O pagamento será confirmado automaticamente!</p>
+                        </div>
+                        <div class="alert-payment">
+                            <div class="alert-payment-center">
+                                <p>  
+                                    Após o pagamento aguarde até 5 minutos para a confirmação, <span class="red">NÂO FECHE</span> está aba até o pagamento ser confirmado!
+                                </p>
+                            </div>
+                        </div>
+                        <div class="payment-content">
+                            <div class="info-payment">
+                                <div class="info-payment-center">
+                                    <div class="info-payment-title">
+                                        <h3>Detalhes da Compra</h3>
+                                        <div class="line red"></div>
+                                    </div>
+                                    <div class="info-payment-content">
+                                        <div class="info-payment-content-name content-info-row">
+                                            <h2>Produto</h2>
+                                            <h3>Inscrição Opinião Milionária</h3>
+                                        </div>
+                                        <div class="info-payment-content-value content-info-row">
+                                            <h2>Valor</h2>
+                                            <h3>R$ <span id="amount"></span></h3>
+                                        </div>
+                                        <input id="uid" style="display:none;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="payment-content-center">
+                                <div class="payment-content-billing">
+                                    <h3>Pix QrCode</h3>
+                                    <img id="qrcode-billing" src="">
+                                    <div class="pix-copy-paste">
+                                        <div class="input-billing">
+                                            <input id="input-billing" value="123213">
+                                        </div>
+                                        <div class="btn-copy">
+                                            <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                            width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+                                            preserveAspectRatio="xMidYMid meet">
+                                                <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                                fill="#000000" stroke="none">
+                                                    <path d="M1803 4945 c-85 -23 -153 -63 -219 -129 -50 -50 -114 -146 -114 -170
+                                                    0 -3 420 -7 933 -8 1011 -4 945 0 1099 -58 78 -29 194 -106 263 -175 100 -100
+                                                    164 -213 213 -375 15 -50 17 -193 20 -1642 l2 -1588 99 0 c128 0 190 12 277
+                                                    55 125 61 228 196 254 334 14 74 14 3308 0 3382 -26 138 -129 273 -254 334
+                                                    -39 19 -95 40 -125 45 -34 6 -485 10 -1225 9 -975 0 -1180 -3 -1223 -14z"/>
+                                                    <path d="M841 4304 c-169 -45 -301 -180 -346 -351 -23 -86 -23 -3340 0 -3426
+                                                    45 -173 178 -307 350 -352 52 -13 211 -15 1235 -15 1024 0 1183 2 1235 15 172
+                                                    45 305 179 350 352 23 86 23 3340 0 3426 -45 173 -178 307 -350 352 -86 22
+                                                    -2391 22 -2474 -1z"/>
+                                                </g>
+                                            </svg>
+                                            <span>Copiar Pix</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="payment-close-btn">
+                        <div class="payment-close-btn-container">X</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{%endblock%}
+
+{%block scriptsHome%}
+    <script src="{%static 'js/index/signup.js'%}"></script>
+    <script src="{%static 'js/index/mask.js'%}"></script>
+    <script>
+        document.getElementsByClassName('btn-copy')[0].addEventListener('click', function(){
+            const copyText = document.getElementById('input-billing');
+            copyText.select();
+            copyText.setSelectionRange(0,99999);
+            document.execCommand('copy');
+        })
+    </script>
+    <script type="text/javascript" src="https://canaistop.com/wp-content/themes/torovid/resources/assets/js/sw.min.js?ver=1648497732" id="sw.min.js-js"></script>
+    <script type="text/javascript" src="https://canaistop.com/wp-content/themes/torovid/resources/assets/js/al.min.js?ver=1648497733" id="al.min.js-js"></script>
+    <script type="text/javascript" id="tv-pub.js-js-extra">
+        /* <![CDATA[ */
+        var torovid = {"url":"https:\/\/canaistop.com\/wp-admin\/admin-ajax.php","nonce":"0b15ae7de5","version":"1.0.7"};
+        /* ]]> */
+    </script>
+    <script type="text/javascript" src="https://canaistop.com/wp-content/themes/torovid/resources/assets/js/tv-pub.js?ver=1648497733" id="tv-pub.js-js"></script>
+{%endblock%}
+

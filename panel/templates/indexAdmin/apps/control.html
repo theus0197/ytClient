@@ -1,0 +1,43 @@
+{%extends "indexAdmin/index.html"%}
+{%load static%}
+
+{%block staticIndex%}
+    <link rel='stylesheet' href='{%static "css/indexAdmin/apps/users.css"%}'>
+{%endblock%}
+
+{%block contentIndex%}
+    <div class="apps">
+        <div class="app-user-create">
+            <div class="app-create-form app-form">
+                <h1>Dados Gateway</h1>
+                <div class="container-entries">
+                    <div class="container-entry">
+                        <h3>Client Key</h3>
+                        <div class="container-input">
+                            <input type="text" name="client-key" value="{{configs.key}}">
+                        </div>
+                    </div>
+                    <div class="container-entry">
+                        <h3>Client Secret</h3>
+                        <div class="container-input">
+                            <input type="text" name="client-secret" value="{{configs.secret}}">
+                        </div>
+                    </div>
+                    <div class="container-entry">
+                        <h3>Valor de Venda</h3>
+                        <div class="container-input">
+                            <input type="text" name="sales-product" value="{{configs.sales.original}}">
+                        </div>
+                    </div>
+                    <div class="container-form-btn">
+                        <div class="btn-form-create btn-form">Atualizar</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{%endblock%}
+
+{%block scriptsIndex%}
+    <script src="{%static 'js/indexAdmin/apps/control.js'%}"></script>
+{%endblock%}

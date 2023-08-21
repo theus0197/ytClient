@@ -1,0 +1,253 @@
+.main-body-center{
+    height: 95%;
+}
+
+.card-main-center{
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-main{
+    width: 42rem;
+    height: 100%;
+    background-color: #f6f6f6;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.9);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card-main-container{
+    height: 95%;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    padding-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.content-card-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    width: 100%;
+    user-select: none;
+}
+
+.content-card-title-center{
+    width: 80%;
+    font-family: 'Sora';
+    font-size: 1.8rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--dark-blue);
+    letter-spacing: .10rem;
+    font-weight: bold;
+}
+
+.content-card-title-center #enterprise-name{
+    font-size: 4.1rem;
+    font-family: 'Fredoka One';
+    color: var(--green);
+}
+
+.content-card-title-center #enterprise-logo{
+    width: 12rem;
+    height: 10rem;
+    margin-top: .75rem;
+    border-radius: 1rem;
+    transition: .3s;
+    animation: rgbColor 3s infinite alternate;
+}
+
+.info-about-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--green);
+    padding: .5rem 0;
+    margin-top: 1.25rem;
+}
+
+.info-about-form-center{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Sora';
+    font-size: 1.8rem;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 0.10rem;
+}
+
+.main-container-content{
+    margin-top: .15rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-card{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.question-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    font-family: 'Sora';
+}
+
+.question-container h3{
+    font-size: 2.1rem;
+    color: var(--dark-blue);
+    text-align: center;
+    user-select: none;
+}
+
+.container-select{
+    margin-top: .5rem;
+    background-color: var(--dark-blue);
+    width: 20rem;
+    border-radius: .25rem;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.9);
+    padding: .25rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-select select{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.8rem;
+    font-family: 'Sora';
+    width: 80%;
+    user-select: none;
+    margin-top: .5rem;
+}
+
+.container-select option{
+    color: #000;
+}
+
+.send-forms{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.75rem;
+}
+
+.send-forms-center{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirm-form{
+    background-color: var(--green);
+    font-size: 2.4rem;
+    font-family: 'Sora';
+    padding: .25rem 3rem;
+    font-weight: bold;
+    letter-spacing: .15rem;
+    color: #fff;
+    border-radius: 1rem;
+    cursor: pointer;
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.9);
+    user-select: none;
+}
+
+.confirm-form:hover{
+    background-color: var(--light-green);
+}
+
+.answer-4{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #fff;
+    font-family: 'Sora';
+    font-size: 1.8rem;
+    width: 80%;
+    height: 16rem;
+}
+
+@media only screen and (max-width: 500px) {
+    .main-header-center{
+        width: 97%;
+    }
+    .main-body-center{
+        width: 90%;
+    }
+    .card-main{
+        width: 100%;
+    }
+
+    .main-header-amount-center{
+        padding: 0 1.5rem;
+    }
+    .main-header-amount-box{
+        font-size: 2rem
+   }
+   .image-logo-in-card{
+        width:26rem !important;
+   }
+   .content-card-title-center{
+    font-size: 2.4rem;
+   }
+   #enterprise-name{
+    font-size: 6.1rem !important;
+   }
+   #enterprise-logo{
+    width: 16rem !important;
+   }
+   .info-about-form-center{
+    font-size: 2.1rem;
+   }
+   .question-container h3{
+    font-size: 2.6rem;
+   }
+   .container-select select{
+    font-size: 2.4rem;
+   }
+   .answer-4{
+    font-size: 2.4rem;
+   }
+   .confirm-form{
+    font-size: 3.1rem;
+   }
+}

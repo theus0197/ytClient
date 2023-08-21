@@ -1,0 +1,135 @@
+.container-content{
+    height: 90vh;
+}
+
+.container-content-sell{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-content-sell-center{
+    width: 50rem;
+    height: 90%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sell-container{
+    width: 90%;
+    height: 90%;
+}
+
+.container-content-sell-title{
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    font-size: 'Fredoka One';
+    font-size: 3.4rem;
+    user-select: none;
+}
+
+.container-content-sell-body{
+    margin-top: 2rem;
+    color: #fff;
+    font-size: 2.1rem;
+    width:100%;
+}
+
+.sell-body-container{
+    display:flex;
+    flex-direction: column;
+    width:90%;
+}
+
+.sell-legends{
+    width:fit-content;
+}
+
+.sell-legends-container{
+    display:flex;
+    flex-direction: row;
+    margin: 1.5rem 0;
+    user-select: none;
+    align-items: center;
+}
+
+.sell-legends-container .sell-legends-circle{
+    width: 2rem;
+    height: 2rem;
+    border-radius: .25rem;
+}
+
+.sell-legends-container span{
+    margin-left: 1rem;
+}
+
+.legend-wp{
+    background-color: #0DD419;
+}
+.legend-wb{
+    background-color: #0D77D4;
+}
+.legend-bd{
+    background-color: #D40DD4;
+}
+
+.sell-infos{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sell-infos-center{
+    width:95%;
+}
+
+.infos{
+    width: 90%;
+    height: 3rem;
+    margin: 1rem 0;
+    padding:.5rem 0;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.container-sell-info{
+    width:100%;
+    height: 100%;
+    border-radius: .25rem;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-sell-info-center{
+    width:95%;
+    height: 90%;
+}
+
+.container-wb{
+    background-color: #0D77D4;
+}
+.container-wp{
+    background-color: #0DD419;
+}
+.container-bd{
+    background-color: #D40DD4;
+}
+
+.amount span{
+    margin-left: .5rem;
+}

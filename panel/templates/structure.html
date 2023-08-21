@@ -1,0 +1,26 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{%block title%}{%endblock%} - Million Bot Automático</title>
+        <link rel='stylesheet' href='{%static "css/structure.css"%}'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Exo%202%3A100%2C100i%2C200%2C200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%7CExo%202%3A600%2C400&amp;subset=latin%2Clatin-ext&amp;display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo%202%3A100%2C100i%2C200%2C200i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C600%2C600i%2C700%2C700i%2C800%2C800i%2C900%7CExo%202%3A600%2C400&amp;subset=latin%2Clatin-ext&amp;display=swap" media="all" onload="this.media='all'">
+        <link rel="icon" type="imagem/png" href="{%static 'images/index/logo-header.png'%}" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Rubik:wght@300;400&display=swap&family=Fredoka+One&display=swap&family=Sora:wght@500&display=swap" rel="stylesheet">
+        {%block static%}{%endblock%} 
+        {%block fonts%}{%endblock%}
+    </head>
+
+    <body>
+        {%block content%}{%endblock%}
+        {%block scripts%}{%endblock%}
+    </body>
+</html>

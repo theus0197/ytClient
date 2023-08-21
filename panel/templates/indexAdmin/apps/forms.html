@@ -1,0 +1,112 @@
+{%extends "indexAdmin/index.html"%}
+{%load static%}
+
+{%block staticIndex%}
+<link rel='stylesheet' href='{%static "css/indexAdmin/apps/users.css"%}'>
+{%endblock%}
+
+{%block contentIndex%}
+
+<form class="video-form">
+    <h1 style="color: #fff">Novo Vídeo</h1>
+    
+    <label for="url">URL do Vídeo:</label>
+    <input type="text" id="url" name="url" required>
+
+    <label for="Titulo">Titulo do video:</label>
+    <input type="text" id="tt" name="tt" required>
+    
+    <label for="pointsToEarn">Pontos para Ganhar:</label>
+    <input value="20" type="number" id="pointsToEarn" name="pointsToEarn" required>
+    
+    <label for="doublePoints">Duplo Pontos:</label>
+    <input type="checkbox" id="doublePoints" name="doublePoints">
+
+<div class="video-data">
+    <div class="thumb"style="display: flex;">
+        <img src="" alt="Imagem do Vídeo" id="thumb">
+    </div>
+    <div style="margin-left: 45px;">
+        <h2>Título do Vídeo Aqui</h2>
+        <label for="input1">views</label>
+        <input type="text" id="input1" name="input1" disabled>
+        
+        <label for="input2">likes</label>
+        <input type="text" id="input2" name="input2" disabled>
+    </div>
+</div>
+</form>
+
+
+<div class="get-data-save">
+    <button id="get-changes">PEGAR INFORMAÇÕES DO VIDEO</button>
+    <button id="save-get-changes">CRIAR</button>
+</div>
+
+
+<style>
+    .thumb {
+        width: 400px;
+    }
+    .video-form {
+        padding: 20px;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+
+    .video-form label, .video-data label {
+        display: block;
+        margin-bottom: 5px;
+        color: #fff;
+    }
+
+    .video-form input[type="text"], .video-form input[type="number"] {
+        width: 40%;
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+
+    .video-form input[type="checkbox"] {
+        margin-right: 5px;
+        cursor: pointer;
+    }
+
+    .video-data {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .video-data img {
+        max-width: 400px;
+        margin-right: 20px;
+    }
+
+    .video-data h2 {
+        margin: 0;
+        color: #fff;
+    }
+
+    .get-data-save { 
+        padding: 20px;
+    }
+
+    .get-data-save button{
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        background-color: #22aeff;
+        color: #fff;
+        font-family: unset;
+        font-weight: 800;
+        cursor: pointer;
+        transition: background 0.5s;
+    }
+    
+</style>
+
+{%endblock%}
+
+{%block scriptsIndex%}
+<script src="{%static 'js/indexAdmin/apps/forms.js'%}"></script>
+{%endblock%}

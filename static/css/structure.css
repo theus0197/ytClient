@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    font-family: "Exo 2",sans-serif;;
+    -webkit-font-smoothing: antialiased;
+}
+
+header {
+    width: 100%;
+}
+
+body, html{
+    --dark-green: #0F231A;
+    --dark-blue: #0f1923;
+    --light-blue: #3F556A;
+    --light-grey-text: #878785;
+    --dark-grey-text: #242525;
+    --orange: #f57a1f;
+    --light-orange: #F39B5A;
+    --dark-orange: #F36B06;
+    --default: #bca854;
+    --light-default: #F3E08E;
+    --white: #FFFFFF;
+    --black: #000000;
+    --grey: #C3C3C3;
+    --grey-background: #F7F7F7;
+    --dark-grey: #333;
+    --color-default: #DFDCDD;
+    --green: #339966;
+    --light-green: #36D485;
+    --purple: #350c54;
+    --red: #F92E21;
+    --red2: #F40000;
+    --light-red: #F9534E;
+    --red-pink: #FB406D;
+}
+
+section{
+    width:100%;
+    min-height: 100vh;
+    height: auto;
+}
+
+.no-select{
+    user-select: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+@keyframes changecolor{
+    0%{
+        fill: var(--green);
+    }
+    60%{
+        fill: #f6f6f6;
+    }
+    100%{
+        fill: var(--green);
+    }
+}
+
+.modal-alerts{
+    top:0;
+    left: 0;
+    width:100%;
+    height: 100vh;
+    position:absolute;
+    display:none;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(12,21,29,.78);
+}
+
+.modal-alerts-center{
+    position: relative;;
+    width: 95%;
+    height: 95%;
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+}
+
+.notification-content{
+    width:100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top:1.5rem;
+}
+
+.notification-content .content{
+    color: var(--dark-blue);
+    font-size: 2.1rem;
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    letter-spacing: .10rem;
+}

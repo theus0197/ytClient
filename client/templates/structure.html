@@ -1,0 +1,51 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Aplicativo - {%block title%}{%endblock%}</title>
+        <link rel='stylesheet' href='{%static "css/structure.css"%}'>
+        <link rel='stylesheet' href='{%static "css/alerts/notification.css"%}'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Rubik:wght@300;400&display=swap&family=Fredoka+One&display=swap&family=Sora:wght@500&display=swap" rel="stylesheet">
+        <link href="{%static 'images/index/icon-logo.png'%}" rel="icon" type="imagem/png">
+        {%block static%}{%endblock%} 
+        {%block fonts%}{%endblock%}
+    </head>
+    <body>
+        {%block content%}{%endblock%}
+        <div class="modal-alerts">
+            <div class="modal-alerts-center">
+                <div class="modal-alerts-container">
+                    <h3 class="status-report"></h3>
+                </div>
+                <div class="modal-close modal-close-alerts no-select close-menu">
+                    <span>X</span>
+                </div>
+            </div>
+        </div>
+        <div class="modal-alert-timer" style="display:none;">
+            <div class="modal-alert-timer-center">
+                <div class="modal-alert-timer-container">
+                    <h3 class="status-report-timer"></h3>
+                    <div class="announcement">
+                        <img src="https://frogti.com/ctm/static/images/index/creativo.png">
+                        <div class="btn-more-info">
+                            <a href="https://curtidamilionaria.fun/2">
+                                <div class="caption">Saiba Mais</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-close modal-close-alerts no-select close-menu">
+                    <span>X</span>
+                </div>
+            </div>
+        </div>
+        {%block scripts%}{%endblock%}
+    </body>
+</html>

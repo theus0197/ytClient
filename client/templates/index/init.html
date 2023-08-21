@@ -1,0 +1,380 @@
+{%extends "structure.html"%}
+{%load static%}
+
+{%block title%}Home{%endblock%}
+
+{%block static%}
+    <link rel='stylesheet' href='{%static "css/index/init.css"%}'>
+    <style>
+        .main-body{
+            position: relative;
+        }
+        .rounded-btn{
+            position:absolute;
+            width: fit-content;
+            height: fit-content;
+            bottom: 0;
+            right: 0;
+            margin-right: 4rem;
+            margin-bottom: 1.25rem;
+        }
+        .rounded-btn-container{
+            position: relative;
+            width: fit-content;
+            height: fit-content;
+            padding: .5rem 1rem;
+            border-radius: 50%;
+            background-color: #fff;
+            box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.9);
+            cursor: pointer;
+        }
+        .rounded-btn-container:hover{
+            background-color: #f6f6f6;
+            box-shadow: 0px 0px 12px green;
+        }
+        .rounded-btn-container svg{
+            width: 3.5rem;
+            height: auto;
+        }
+        .rounded-btn-container svg path{
+            fill: green;
+        }
+        @media only screen and (max-width: 870px){
+            .rounded-btn-container svg{
+                width: 5rem
+            }
+        }
+    </style>
+{%endblock%}
+
+{%block content%}
+    <section>
+        <div class='main'>
+            <div class="main-header">
+                <div class="main-header-center">
+                    <div class="main-header-image">
+                        <img src="{%static 'images/index/logo-oma.png'%}">
+                    </div>
+                    <div class="main-header-box">
+                        <a href="/signin">
+                            <div class="header-box-item">
+                                <div>Entrar</div>
+                            </div>
+
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="main-body">
+                <div class="main-body-hidden">
+                    <div class="main-body-auto">
+                        <div class="section-0 section-class">
+                            <div class="section-0-attention">
+                                <div class="section-0-center">
+                                    <h2 class="title-cta">Sistema Alemão chega ao Brasil</h2>
+                                    <div class="container-sub-title-att">
+                                        <h2>Brasileiros estão <span class="att-ps red">lucrando</span> mais de <span class="att-ps red">12 mil</span> em somente 5 dias</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section-0-green">
+                                <div class="section-0-center">
+                                    <span>respondendo apenas formulários de empresas multimarcas!</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-1 section-class">
+                            <div class="section-1-center">
+                                <div class="section-1-content">
+                                    <div class="section-video">
+                                        <video id="video-apresentation" preload="metadata">
+                                            <source src="{%static 'images/index/lpmovie.mp4'%}" type="video/mp4"/>
+                                            Video não suportado!
+                                        </video>
+                                        <div class="not-action">
+                                            <div class="container-not-action">
+                                                <div class="rounded-container-start">
+                                                    <div class="rounded-container-start-center">
+                                                        <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                                        width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+                                                        preserveAspectRatio="xMidYMid meet">
+                                                            <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                                                            fill="#000000" stroke="none">
+                                                            <path d="M569 5107 c-107 -31 -209 -122 -251 -225 l-23 -57 0 -2265 0 -2265
+                                                            23 -57 c33 -81 108 -160 190 -200 60 -30 75 -33 157 -33 76 0 99 4 145 26 70
+                                                            33 3810 2191 3867 2232 49 35 105 112 129 177 10 27 16 76 17 120 0 123 -53
+                                                            229 -148 298 -54 39 -3795 2198 -3862 2229 -65 30 -177 39 -244 20z"/>
+                                                            </g>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="app-avaible">
+                                        <div class="app-avaible-row">
+                                            <img src="{%static 'images/index/gplay.png'%}">
+                                            <img src="{%static 'images/index/appstore.png'%}">
+                                        </div>
+                                    </div>
+                                    <div class="section-value">
+                                        <div class="section-value-center">
+                                            <div class="tender-value-platform">
+                                                <div class="tender-value-platform-container">
+                                                    <h3 class="original-value">De <span class='risked'>R$ 998,90</span></span></h3>
+                                                    <h3 class="promotion-value-parcel">Por 12x de <span class="attention-parcel">R${{global.personalize.parcel_formated}}</span></h3>
+                                                    <h3 class="other-option-value">Ou à vista por <span class=attention-value>R${{global.configs.sales.original}}</span></h3>
+                                                    <span class="no-month">Sem mensansalidade</span>
+                                                </div>
+                                            </div>
+                                            <div class="timeout-value-platform">
+                                                <div class="timeout-value-platform-container">
+                                                    <div class="timeout-text">
+                                                        <h3>Essa oferta terminará em</h3>
+                                                    </div>
+                                                    <div class="timer-timeout">
+                                                        <input class="input-hour" style="display:none;">
+                                                        <div class="timer-timeout-container">
+                                                            <div class="time-hour timer-spacing">
+                                                                <div class="time-hour-container time-spacing-center">
+                                                                    <h3 class="hour timer-time">00</h3>
+                                                                    <h2 class="timer-text">Horas</h2>
+                                                                </div>
+                                                            </div>
+                                                            <div class="time-minute timer-spacing">
+                                                                <div class="time-minute-container time-spacing-center">
+                                                                    <h3 class="minute timer-time">00</h3>
+                                                                    <h2 class="timer-text">Minutos</h2>
+                                                                </div>
+                                                            </div>
+                                                            <div class="time-seconds timer-spacing">
+                                                                <div class="time-seconds-container time-spacing-center">
+                                                                    <h3 class="seconds timer-time">00</h3>
+                                                                    <h2 class="timer-text">Segundos</h2>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="avaible">
+                                                        <div class="avaible-center">
+                                                            <span>Apenas</span>
+                                                            <h3 class="vaible-len">8</h3>
+                                                            <span>Vagas Disponíveis</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="purchase-program-1 purchase-program">
+                                                <div class="purchase-program-center">
+                                                    <a href="/signup">
+                                                        <div class="purchase-btn">
+                                                            <h3>Eu quero o sistema</h3>
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="quantity-users">
+                                <div class="quantity-users-len">
+                                    <h3>+ DE <span>10 MIL</span> USUÁRIOS MUDANDO DE VIDA APENAS OPINANDO</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-3 section-class">
+                            <div class="section-3-center">
+                                <div class="testimony-title">
+                                    <div class="testimony-title-center title-lp">
+                                        <h3>Feedbacks dos nossos usuários</h3>
+                                        <div class="red-line"></div>
+                                    </div>
+                                </div>
+                                <div class="cards-testimony">
+                                    <div class="cards-testimony-center">
+                                        <div class="card-testimony">
+                                            <div class="card-testimony-center">
+                                                <div class="testimony-content">
+                                                    <span>"</span>
+                                                    <span>
+                                                        O novo formato de renda extra permite eu lucrar sem muito esforço e aproveitar minha familia
+                                                    </span>
+                                                    <span>"</span>
+                                                </div>
+                                                <div class="testimony-header">
+                                                    <div class="testimony-header-image">
+                                                        <img class="testimony-image" src="{%static 'images/testimony/1.jpg'%}">
+                                                    </div>
+                                                    <div class="testimony-hader-name">
+                                                        <span>Fernando Martin Castro</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-testimony">
+                                            <div class="card-testimony-center">
+                                                <div class="testimony-content">
+                                                    <span>"</span>
+                                                    <span>
+                                                        Estou ganhando muito dinheiro apenas opinando, consegui até mesmo comprar um carro novo em 2 meses de uso desse método!
+                                                    </span>
+                                                    <span>"</span>
+                                                </div>
+                                                <div class="testimony-header">
+                                                    <div class="testimony-header-image">
+                                                        <img class="testimony-image" src="{%static 'images/testimony/3.jpg'%}">
+                                                    </div>
+                                                    <div class="testimony-hader-name">
+                                                        <span>Carolina Moraes</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-testimony">
+                                            <div class="card-testimony-center">
+                                                <div class="testimony-content">
+                                                    <span>"</span>
+                                                    <span>
+                                                        Venho lucrando entre R$120 ~ R$270 todos os dias. Só tenho a agradecer a plataforma. 
+                                                    </span>
+                                                    <span>"</span>
+                                                </div>
+                                                <div class="testimony-header">
+                                                    <div class="testimony-header-image">
+                                                        <img class="testimony-image" src="{%static 'images/testimony/2.jpg'%}">
+                                                    </div>
+                                                    <div class="testimony-hader-name">
+                                                        <span>Breno Sales</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-testimony">
+                                            <div class="card-testimony-center">
+                                                <div class="testimony-content">
+                                                    <span>"</span>
+                                                    <span>
+                                                        Consegui fazer minha viagem dos sonhos, graças a esse sistema consegui realizar minha primeira viagem para fora do país. 
+                                                    </span>
+                                                    <span>"</span>
+                                                </div>
+                                                <div class="testimony-header">
+                                                    <div class="testimony-header-image">
+                                                        <img class="testimony-image" src="{%static 'images/testimony/4.jpg'%}">
+                                                    </div>
+                                                    <div class="testimony-hader-name">
+                                                        <span>Elisa Cristiane</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="purchase-program-1 purchase-program">
+                                    <div class="purchase-program-center">
+                                        <a href="/signup">
+                                            <div class="purchase-btn">
+                                                <h3>Eu quero o sistema</h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-4 section-class">
+                            <div class="section-4-center">
+                                <div class="questions-title title-lp">
+                                    <h3>Perguntas e Dúvidas Frequentes</h3>
+                                    <div class="red-line"></div>
+                                </div>
+                                <div class="questions-content">
+                                    <div class="card-question">
+                                        <div class="card-question-center">
+                                            <div class="card-question-title">
+                                                <h3>Formas de pagamento</h3>
+                                            </div>
+                                            <div class="card-question-content">
+                                                <p>A Opinião Milionária pode ser comprado através de PIX, débito, crédito e boleto.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-question">
+                                        <div class="card-question-center">
+                                            <div class="card-question-title">
+                                                <h3>Em quanto tempo tenho resultados com a Opinião Milionária?</h3>
+                                            </div>
+                                            <div class="card-question-content">
+                                                <p>HOJE MESMO, RESULTADO IMEDIATO!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-question">
+                                        <div class="card-question-center">
+                                            <div class="card-question-title">
+                                                <h3>Por quanto tempo vou ter acesso a Opinião Milionária?</h3>
+                                            </div>
+                                            <div class="card-question-content">
+                                                <p>O acesso a Opinião Milionária tem duração vitálicia!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-question">
+                                        <div class="card-question-center">
+                                            <div class="card-question-title">
+                                                <h3>Quando terei acesso ao produto?</h3>
+                                            </div>
+                                            <div class="card-question-content">
+                                                <p>Mediante aprovação do pagamento, o sistema irá liberar automaticamente para você!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-value">
+                            <div class="section-value-center">
+                                <div class="tender-value-platform">
+                                    <div class="tender-value-platform-container">
+                                        <h3 class="other-option-value option-value-second">R$ <span class="attention-value attention-value-second">{{global.configs.sales.original}}</span></h3>
+                                        <h3 class="promotion-value-parcel promotion-value-parcel-second">Ou por apenas 12x de <span class="attention-parcel attention-parcel-second">R${{global.personalize.parcel_formated}}</span></h3>
+                                        <span class="no-month no-month-second">Sem mensansalidade</span>
+                                    </div>
+                                </div>
+                                <div class="purchase-program-1 purchase-program">
+                                    <div class="purchase-program-center">
+                                        <a href="/signup">
+                                            <div class="purchase-btn">
+                                                <h3>Eu quero o sistema</h3>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="legends">
+                            <div class="legends-center">
+                                <p>
+                                    Copyright © Opinião Milionária. All Rights Reserved
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rounded-btn">
+                        <a href="https://api.whatsapp.com/send/?phone=5512992256665&text=Gostaria%20de%20saiber%20mais%20informa%C3%A7%C3%B5s%20sobre%20o%20Opini%C3%A3o%20Milion%C3%A1ria&type=phone_number&app_absent=0">
+                            <div class="rounded-btn-container">
+                                <svg class="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                                    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{%endblock%}
+
+{%block scripts%}
+    <script src="{%static 'js/index/init.js'%}"></script>
+{%endblock%}

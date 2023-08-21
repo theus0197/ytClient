@@ -1,0 +1,368 @@
+.main-body-center{
+    height: 95% !important;
+}
+
+.card-payment-modal{
+    width:100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-payment{
+    position: relative;
+    width: 50rem;
+    height: 100%;
+    background-color: var(--color-default);
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 13px #407CFB;
+    overflow: hidden;
+}
+
+.card-payment-container{
+    width:100%;
+    height: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-payment-center{
+    width: 90%;
+    height: 92%;
+}
+
+.top-payment{
+    margin: .5rem 0;
+}
+
+.top-title{
+    color: var(--dark-blue);
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.top-description{
+    margin-top: 1.5rem;
+    font-size: 1.4rem;
+    text-align: center;
+    color: var(--dark-blue);
+    font-family: 'Rubik', sans-serif;
+    letter-spacing: .05rem;
+}
+
+.top-more-info{
+    margin-top: 2rem;
+    margin-left: 1rem;
+    color: var(--dark-blue);
+}
+
+.top-more-info li{
+    margin-bottom: .5rem;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.3rem;
+}
+
+.forms{
+    margin-top: 1rem;
+}
+
+.form-container-flex{
+    display: flex;
+}
+
+.input-container{
+    display:flex;
+    flex-direction: column;
+    background-color: var(--dark-blue);
+    width: 30rem;
+    color: #fff;
+    border-radius: .5rem;
+    margin: 1rem 0;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.input-container-flex{
+    width: 20rem !important;
+    margin: 0 .25rem;
+}
+
+.input-container-center{
+    display:flex;
+    flex-direction: column;
+    width:90%;
+
+}
+
+.input-container span{
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.2rem;
+    margin-top: .5rem;
+    user-select: none;
+}
+
+.input-container input{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    font-size: 1.4rem;
+    margin-top: .5rem;
+    margin-bottom: .75rem;
+    color: #fff;
+}
+
+
+.show_my-amount{
+    display:flex;
+    align-items: center;
+    margin-top: 1rem;
+    color: var(--dark-blue);
+}
+
+.show_my-amount h3{
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: .10rem;
+}
+
+
+.show_my-amount span{
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.4rem;
+    margin-left: .5rem;
+    font-weight: bold;
+}
+
+.rules-payment{
+    display:flex;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.4rem;
+    color: var(--dark-blue);
+}
+
+.rules-payment-flex{
+    display:flex;
+    align-items: center;
+}
+
+.rules-payment-flex span{
+    margin-left: .25rem;
+}
+
+.p2{
+    margin-left: 2rem;
+}
+
+.btn-confirm-container{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.btn-confirm{
+    position: relative;
+    background-color: var(--dark-blue);
+    color: #fff;
+    border-radius: .25rem;
+    padding: .25rem 2.5rem;
+    margin: 2rem 0;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: .3s;
+    width: 12rem;
+}
+
+.btn-confirm:hover{
+    background-color: #407CFB;
+}
+
+.payment-validate{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Sora';
+    color: var(--dark-blue)
+}
+
+.payment-validate-center{
+    width: 60rem;
+    height: 80%;
+    background-color: #f6f6f6;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.payment-validate-center-container{
+    width:90%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.payment-validate h2{
+    display:flex;
+    font-family: 'Fredoka One', sans-serif;
+    font-size: 3.1rem;
+    color: var(--dark-blue);
+    text-align: center;
+    letter-spacing: .15rem;
+    margin-top: 1rem;
+}
+
+.back-color{
+    font-size: 1.8rem;
+    margin-left: .5rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    text-align: center;
+    background-color: var(--green);
+    padding: .5rem 0;
+    border-radius: .5rem;
+}
+
+.payment-validate span{
+    font-size: 1.6rem;
+    margin-left: .5rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.payment-validate img{
+    width: 21rem;
+    border-radius: 1rem;
+    margin-top: 3rem;
+    user-select:none;
+}
+
+.btn-okay{
+    background-color: var(--dark-blue);
+    color: #fff;
+    border-radius: .25rem;
+    padding: .25rem 2.5rem;
+    margin-top: 1.75rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: .3s;
+    font-family: 'Rubik', sans-serif;
+    font-size: 2.4rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn-okay:hover{
+    background-color: #407CFB;
+}
+
+.logo-in-draw{
+    width:10rem;
+}
+
+.payment-status{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.75rem;
+    display:flex;
+    flex-direction: row;
+    font-family: 'Sora';
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--dark-blue);
+    user-select: none;
+}
+
+.payment-status svg{
+    width: 3rem;
+    height: 3rem;
+}
+
+.payment-status svg path{
+    fill: var(--green)
+}
+
+.payment-status h3{
+    animation: invisible 1s infinite alternate;
+    margin-left: 1rem;
+    width: fit-content;
+}
+
+@keyframes invisible{
+    0%{
+        opacity:1;
+    }
+    100%{
+        opacity:0.2;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .card-payment{
+        width: 100% !important;
+    }
+    .payment-validate img{
+        width: 18rem;
+    }
+    .payment-validate-center{
+        width: 92%;
+        height: 95%;
+    }
+    .payment-validate-center-container{
+        width: 95%;
+        height: 98%;
+    }
+    .payment-validate h2{
+        font-size: 2.4rem;
+    }
+    .payment-status{
+        font-size: 1.6rem;;
+    }
+    .main-body-center{
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 374px){
+    .input-container-flex{
+        width: 90% !important;
+    }
+    .form-container-flex{
+        flex-direction: column !important;
+    }
+    .input-container-flex{
+        margin: .5rem 0;
+    }
+    .input-container{
+        width:100% !important;
+    }
+}

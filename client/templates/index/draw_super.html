@@ -1,0 +1,126 @@
+{%extends "index/mainStructure.html"%}
+{%load static%}
+{%block titleMain%}Saque{%endblock%}
+
+{%block staticMain%}
+    <link rel='stylesheet' href='{%static "css/index/sacar.css"%}'>
+{%endblock%}
+
+{%block contentMain%}
+    <div class="card-payment-modal">
+        <div class="card-payment">
+            <div class="card-payment-container">
+                <div class="card-payment-center">
+                    <div class="top-payment">
+                        <div class="top-title">
+                            <h3>Insira as informações de Pix</h3>
+                        </div>
+                        <div class="top-description">
+                            <p>Antes de fazer um saque Pix, certifique-se de ter registrado seu CPF como chave Pix no seu aplicativo bancário.</p>
+                        </div>
+                        <div class="top-more-info no-mobile">
+                            <ul>
+                                <li>Abra o aplicativo bancário</li>
+                                <li>Vá para a seção Pix do aplicativo bancário</li>
+                                <li>Selecione "Minhas Chaves"</li>
+                                <li>Selecione a opção "Registrar Chave," e registre seu CPF</li>
+                                <li>Assim que seu banco confirmar que a chave está registrada, você poderá receber saques via Pix</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="bottom-payment">
+                        <div class="forms">
+                            <div class="form-container">
+                                <div class="input-container">
+                                    <div class="input-container-center">
+                                        <span>Chave Pix</span>
+                                        <input class="input-info" id="cpf" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-container form-container-flex">
+                                <div class="input-container input-container-flex">
+                                    <div class="input-container-center">
+                                        <span>Nome</span>
+                                        <input class="input-info" id="first-name" type="text">
+                                    </div>
+                                </div>
+                                <div class="input-container input-container-flex">
+                                    <div class="input-container-center">
+                                        <span>Sobrenome</span>
+                                        <input class="input-info" id="last-name" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-container">
+                                <div class="show_my-amount">
+                                    <h3>Saldo Disponível: </h3>
+                                    <span>R$</span>
+                                    <span id="my-amount">{{amount}}</span>
+                                </div>
+                                <div class="show-mini">
+                                    <p>Saque mínimo R$1.200</p>
+                                </div>
+                                <div class="input-container">
+                                    <div class="input-container-center">
+                                        <span>Quantia (BRL)</span>
+                                        <input class="input-info" id="payment" type="number">
+                                    </div>
+                                </div>
+                                <div class="rules-payment">
+                                    <div class="rules-payment-you rules-payment-flex">
+                                        <h3>Você receberá: R$</h3>
+                                        <span id="you-pay">-</span>
+                                    </div>
+                                    <div class="rules-payment-vp rules-payment-flex p2">
+                                        <h3>Opinião Milionária: R$</h3>
+                                        <span id="vp-pay">-</span>
+                                    </div>
+                                </div>
+                                <div class="btn-confirm-container">
+                                    <div class="btn-confirm">
+                                        <div class="btn-confirm-center">Sacar</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+    <div class="payment-validate">
+        <div class="payment-validate-center">
+            <div class="payment-validate-center-container">
+                <img id="logo-in-draw" src="{%static 'images/index/logo-oma.png'%}">
+                <h2>Vimos que você é novo por aqui e este é o seu primeiro saque!</h2>
+                <h3 class="back-color">Iremos isentar a taxa de 20% do seu saque, ou seja, você não será taxado no seu primeiro saque!</h3>
+                <span>Seu Pix será enviado em até 5 minutos!</span>
+                <div class="payment-status">
+                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                     width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+                     preserveAspectRatio="xMidYMid meet">
+                        <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                        fill="#000000" stroke="none">
+                            <path d="M2455 4667 c-87 -22 -148 -58 -214 -126 -59 -60 -157 -224 -1039
+                            -1731 -536 -916 -988 -1694 -1005 -1730 -40 -84 -49 -207 -22 -306 44 -162
+                            186 -292 354 -324 74 -14 3988 -14 4062 0 169 32 310 161 354 324 22 80 17
+                            220 -10 284 -33 81 -1993 3417 -2035 3465 -85 96 -190 146 -320 153 -42 2 -97
+                            -2 -125 -9z m246 -1054 c61 -34 120 -105 139 -166 18 -57 16 -103 -30 -879
+                            -22 -373 -40 -682 -40 -688 0 -6 -77 -10 -210 -10 -193 0 -210 1 -210 18 0 9
+                            -20 348 -44 752 -49 815 -49 794 15 886 58 85 146 126 255 121 57 -3 83 -10
+                            125 -34z m-13 -2083 c68 -29 144 -112 167 -181 38 -114 2 -254 -85 -333 -65
+                            -58 -122 -80 -210 -80 -127 0 -227 64 -282 179 -53 113 -34 243 49 335 95 106
+                            230 136 361 80z"/>
+                        </g>
+                    </svg>
+                    <h3>Enviando seu Pix, aguarde...</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+{%endblock%}
+
+{%block scriptMain%}
+    <script src="{%static 'js/index/sacar_super.js'%}"></script>
+{%endblock%}

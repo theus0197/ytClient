@@ -1,0 +1,50 @@
+{
+    "list": [
+        {
+            "validation": "lacoste",
+            "name": "Lacoste",
+            "image": "https://frogti.com/optm/images/Lacoste.jpg"
+        },
+        {
+            "validation": "heineken",
+            "name": "Heineken",
+            "image": "https://frogti.com/optm/images/Heineken.jpg"
+        },
+        {
+            "validation": "calvin klein",
+            "name": "Calvin Klein",
+            "image": "https://frogti.com/optm/images/Calvin Klein.jpg"
+        },
+        {
+            "validation": "honda",
+            "name": "Honda",
+            "image": "https://frogti.com/optm/images/Honda.jpg"
+        },
+        {
+            "validation": "ponto frio",
+            "name": "Ponto Frio",
+            "image": "https://frogti.com/optm/images/Ponto Frio.jpg"
+        },
+        {
+            "validation": "gucci",
+            "name": "Gucci",
+            "image": "https://frogti.com/optm/images/Gucci.jpg"
+        },
+        {
+            "validation": "nike",
+            "name": "Nike",
+            "image": "https://frogti.com/optm/images/Nike.jpg"
+        },
+        {
+            "validation": "adidas",
+            "name": "Adidas",
+            "image": "https://frogti.com/optm/images/Adidas.jpg"
+        },
+        {
+            "validation": "bmw",
+            "name": "BMW",
+            "image": "https://frogti.com/optm/images/BMW.jpg"
+        }
+    ],
+    "total": 9
+}

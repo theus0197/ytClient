@@ -1,0 +1,22 @@
+{%extends "structure.html"%}
+{%load static%}
+
+{%block title%}{%block titleHome%}Home{%endblock%}{%endblock%}
+
+{%block static%}
+    <link rel='stylesheet' href='{%static "css/index/home.css"%}'>
+    {%block staticHome%}{%endblock%}
+{%endblock%} 
+
+{%block fonts%}{%endblock%}
+{%block content%}
+    <section>
+        <div class="container-section">
+            {%block contentHome%}{%endblock%}
+        </div>
+    </section>
+{%endblock%}
+
+{%block scripts%}
+    {%block scriptsHome%}{%endblock%}
+{%endblock%}

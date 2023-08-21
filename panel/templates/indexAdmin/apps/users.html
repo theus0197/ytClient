@@ -1,0 +1,69 @@
+{%extends "indexAdmin/index.html"%}
+{%load static%}
+
+{%block staticIndex%}
+<link rel='stylesheet' href='{%static "css/indexAdmin/apps/users.css"%}'>
+{%endblock%}
+
+{%block contentIndex%}
+    <div class="apps">
+        <div class="app-user-create">
+            <div class="app-create-form app-form">
+                <h1>Criar conta</h1>
+                <div class="container-entries">
+                    <div class="container-entry">
+                        <h3>Usuário</h3>
+                        <div class="container-input">
+                            <input type="text" name="username" placeholder="admin">
+                            <div class="status-input status-username"></div>
+                        </div>
+                    </div>
+                    <div class="container-entry">
+                        <h3>E-mail</h3>
+                        <div class="container-input">
+                            <input type="text" name="email" placeholder="admin@exemplo.com">
+                            <div class="status-input status-email"></div>
+                        </div>
+                    </div>
+                    <div class="container-entry">
+                        <h3>Senha</h3>
+                        <div class="container-input">
+                            <input type="password" name="password" placeholder="admin@123">
+                            <div class="status-input status-password"></div>
+                        </div>
+                    </div>
+                    <div class="container-entry">
+                        <h3>Confirmar senha</h3>
+                        <div class="container-input">
+                            <input type="password" name="verify-password" placeholder="admin@123">
+                            <div class="status-input status-verify-password"></div>
+                        </div>
+                    </div>
+                    <div class="container-form-btn">
+                        <div class="btn-form-create btn-form">Criar</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="app-user-search">
+        </div>
+        <div class="app-user-search">
+            <div class="app-search-form app-form">
+                <h1>Buscar usuário</h1>
+                <div class="container-entries">
+                    <div class="container-entry">
+                        <h3>E-mail</h3>
+                        <div class="container-input">
+                            <input type="text" name="email" placeholder="admin@exemplo.com">
+                        </div>
+                    </div>
+                </div>
+                <div class="container-results"></div>
+            </div>
+        </div>
+    </div>
+{%endblock%}
+
+{%block scriptsIndex%}
+<script src="{%static 'js/indexAdmin/apps/users.js'%}"></script>
+{%endblock%}
