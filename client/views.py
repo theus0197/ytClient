@@ -17,6 +17,7 @@ def index(request, page_id=None):
         return render(request, 'index/main.html', {
             'amount': response['containers']['amount'],
             'amount_is': response['containers']['amount_is'],
+            'first': response['containers']['first'],
             'headerMainColor': data,
             'primarycolor': primaryColor,
             'auth': pcontroller.verify_account(request.user),
@@ -266,3 +267,19 @@ def webhook_handler(request):
         return JsonResponse({'message': 'Webhook received successfully'})
     else:
         return JsonResponse({'error': 'Invalid request method'})
+
+@csrf_exempt   
+def first_access(request):
+    if request.method  == 'POST':
+        if request.user.is_authenticated:
+            response = controller.first_acesss(request)
+            return JsonResponse(response)
+        else:
+            return JsonResponse({
+                'status': False,
+                'message': 'Você não está logado na sua conta!',
+                'containers': {}
+            })
+    else:
+        response = controller.method_not_allowed()
+        return JsonResponse(response)

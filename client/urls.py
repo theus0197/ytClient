@@ -24,4 +24,5 @@ urlpatterns = [
     path('videos/id/<str:id>', views.getVideo),
     path('videos/like/<str:id>', views.likeVideo),
     path('api/webhook/hotmart', views.webhook_handler, name='webhook'),
+    path('api/first/access', views.first_access, name='first_access'),
 ]

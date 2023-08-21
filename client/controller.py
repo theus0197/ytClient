@@ -51,10 +51,10 @@ def returnColor(component):
 def main(username):
     user = User.objects.filter(username=username)[0]
     my_profile = models.myProfile.objects.filter(user=user)
-    '''if mcontroller.verify_account(user) or my_profile[0].phone != '':
+    if mcontroller.verify_account(user) or my_profile[0].phone != '':
         forms_phone = True
     else:
-        forms_phone = my_profile[0].forms_phone'''
+        forms_phone = my_profile[0].forms_phone
     
     #response = requests.get(server_static + 'media/json/control/enterprises.json').json()
     #enterprise = random.choice(response['list'])
@@ -66,8 +66,8 @@ def main(username):
         'containers': {
             'amount': amount.replace('.', ','),
             'amount_is': True if float(my_profile[0].amount) >= 200 else False,
+            'first': forms_phone
             #'enterprise': enterprise,
-            #'forms_phone': forms_phone
         }
     }
 
@@ -623,4 +623,76 @@ def likeVideo(username, useridparam, vdid):
         'AMOUNT': amount.replace('.', ',')
     }
 
+
+def hotmart_webhook():
+    '''{
+        "items": [
+            {
+            "product": {
+                "name": "Product06",
+                "id": 2125812
+            },
+            "buyer": {
+                "name": "Ian Victor Baptista",
+                "ucode": "839F1A4F-43DC-F60F-13FE-6C8BD23F6781",
+                "email": "ian@teste.com"
+            },
+            "producer": {
+                "name": "Bárbara Sebastiana Cardoso",
+                "ucode": "252A74C5-4A97-143A-9349-E45D871C6018"
+            },
+            "purchase": {
+                "transaction": "HP12455690122399",
+                "order_date": 1622948400000,
+                "approved_date": 1622948400000,
+                "status": "UNDER_ANALISYS",
+                "recurrency_number": 2,
+                "is_subscription": false,
+                "commission_as": "PRODUCER",
+                "price": {
+                "value": 235.76,
+                "currency_code": "USD"
+                },
+                "payment": {
+                "method": "BILLET",
+                "installments_number": 1,
+                "type": "BILLET"
+                },
+                "tracking": {
+                "source_sck": "HOTMART_PRODUCT_PAGE",
+                "source": "HOTMART",
+                "external_code": "FD256D24-401C-7C93-284C-C5E0181CD5DB"
+                },
+                "warranty_expire_date": 1625022000000,
+                "offer": {
+                "payment_mode": "INVOICE",
+                "code": "k2pasun0"
+                },
+                "hotmart_fee": {
+                "total": 36.75,
+                "fixed": 0,
+                "currency_code": "EUR",
+                "base": 11.12
+                }
+            }
+            }
+        ],
+        "page_info": {
+            "total_results": 14,
+            "next_page_token": "eyJyb3dzIjo1LCJwYWdlIjozfQ==",
+            "prev_page_token": "eyJyb3dzIjo1LCJwYWdlIjoxfQ==",
+            "results_per_page": 5
+        }
+    }'''
+    print('')
          
+def first_acesss(request):
+    user = request.user
+    pp =myProfile.objects.get(user=user)
+    pp.forms_phone = True
+    pp.save()
+    return{
+        'status': True,
+        'message': 'Primeiro acesso realizado com sucesso!',
+        'containers': {}
+    }
