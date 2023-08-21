@@ -14,6 +14,7 @@ def index(request, page_id=None):
         data = controller.returnColor('headerMain')
         primaryColor = controller.returnColor('primaryColor')
         response = controller.main(request.user)
+        print(response['containers']['first'])
         return render(request, 'index/main.html', {
             'amount': response['containers']['amount'],
             'amount_is': response['containers']['amount_is'],

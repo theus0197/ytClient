@@ -51,10 +51,7 @@ def returnColor(component):
 def main(username):
     user = User.objects.filter(username=username)[0]
     my_profile = models.myProfile.objects.filter(user=user)
-    if mcontroller.verify_account(user) or my_profile[0].phone != '':
-        forms_phone = True
-    else:
-        forms_phone = my_profile[0].forms_phone
+    forms_phone = my_profile[0].forms_phone
     
     #response = requests.get(server_static + 'media/json/control/enterprises.json').json()
     #enterprise = random.choice(response['list'])
