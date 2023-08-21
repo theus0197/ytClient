@@ -17,8 +17,6 @@ def index(request, page_id=None):
         return render(request, 'index/main.html', {
             'amount': response['containers']['amount'],
             'amount_is': response['containers']['amount_is'],
-            'enterprise': response['containers']['enterprise'],
-            'forms_phone': response['containers']['forms_phone'],
             'headerMainColor': data,
             'primarycolor': primaryColor,
             'auth': pcontroller.verify_account(request.user),
