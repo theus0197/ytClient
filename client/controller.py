@@ -51,13 +51,13 @@ def returnColor(component):
 def main(username):
     user = User.objects.filter(username=username)[0]
     my_profile = models.myProfile.objects.filter(user=user)
-    if mcontroller.verify_account(user) or my_profile[0].phone != '':
+    '''if mcontroller.verify_account(user) or my_profile[0].phone != '':
         forms_phone = True
     else:
-        forms_phone = my_profile[0].forms_phone
+        forms_phone = my_profile[0].forms_phone'''
     
-    response = requests.get(server_static + 'media/json/control/enterprises.json').json()
-    enterprise = random.choice(response['list'])
+    #response = requests.get(server_static + 'media/json/control/enterprises.json').json()
+    #enterprise = random.choice(response['list'])
 
     amount = '{:.2f}'.format(my_profile[0].amount)
     return{
@@ -66,8 +66,8 @@ def main(username):
         'containers': {
             'amount': amount.replace('.', ','),
             'amount_is': True if float(my_profile[0].amount) >= 200 else False,
-            'enterprise': enterprise,
-            'forms_phone': forms_phone
+            #'enterprise': enterprise,
+            #'forms_phone': forms_phone
         }
     }
 
