@@ -14,6 +14,17 @@
             <h2>CONFIGS</h2>
             <div class="scroll">
                 <div class="color-scheme">
+                  <p style="font-size: 14px; font-weight: bold;">Popups</p><hr>
+                  <div class="opts">
+                      <label for="headerMain">Popup Welcome Message</label>
+                      <input type="text" class="config-popups" value="{{ welcome_popup }}" placeholder="Message..." name="welcomePopup">
+                  </div>
+                  <div class="opts">
+                      <label for="">Welcome Link Video</label>
+                      <input type="text" class="config-popups" value="{{ welcome_link_video }}" placeholder="Link YT" name="welcomeLinkVideo">
+                  </div>
+                </div>
+                <div class="color-scheme">
                   <p style="font-size: 14px; font-weight: bold;">Colors</p><hr>
                   <div class="opts">
                       <label for="headerMain">Header Main Page</label>
@@ -21,7 +32,7 @@
                   </div>
                   <div class="opts">
                       <label for="">Primary Color</label>
-                      <input type="text" value={{ primarycolor }} placeholder="Color..." name="primaryColor">
+                      <input type="text" value="{{ primarycolor }}" placeholder="Color..." name="primaryColor">
                   </div>
                 </div>
                 <div class="color-scheme">

@@ -13,8 +13,8 @@ def index(request, page_id=None):
     if request.user.is_authenticated:
         data = controller.returnColor('headerMain')
         primaryColor = controller.returnColor('primaryColor')
+        response_welcome_popup = controller.info_popup_welcome()
         response = controller.main(request.user)
-        print(response['containers']['first'])
         return render(request, 'index/main.html', {
             'amount': response['containers']['amount'],
             'amount_is': response['containers']['amount_is'],
@@ -22,6 +22,8 @@ def index(request, page_id=None):
             'headerMainColor': data,
             'primarycolor': primaryColor,
             'auth': pcontroller.verify_account(request.user),
+            'welcome_popup': response_welcome_popup['welcome_popup'],
+            'welcome_link_video': response_welcome_popup['welcome_link_video']
         })
     else:
         return render(request, 'index/login.html')

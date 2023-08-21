@@ -233,7 +233,7 @@ def updateColor(data):
     data = load_json(data)
     color = data['color']
     name = data['nameUpdate']
-    objects = cmodels.pageConfigurations.filter(name=name)
+    objects = cmodels.pageConfigurations.objects.filter(name=name)
     if objects.exists():
         objects[0].color = color
         objects[0].save()
@@ -262,7 +262,11 @@ def returnConfig(component):
     try:
         config = cmodels.pageConfigurations.objects.get(name=component).config
         dataJson = json.loads(config)
-        return dataJson['color']
+        
+        try:
+            return dataJson['color']
+        except:
+            return dataJson
     except cmodels.pageConfigurations.DoesNotExist:
         return None
 

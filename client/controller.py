@@ -47,14 +47,22 @@ def returnColor(component):
         return dataJson['color']
     except pageConfigurations.DoesNotExist:
         return None
+    
+def info_popup_welcome():
+    welcome_popup = pageConfigurations.objects.get(name='welcomePopup').config
+    parsed_data_welcome = json.loads(welcome_popup)
+    welcome_link_video = pageConfigurations.objects.get(name='welcomeLinkVideo').config
+    parsed_data_link = json.loads(welcome_link_video)
+    return {
+        'welcome_popup': parsed_data_welcome['color'],
+        'welcome_link_video': parsed_data_link['color'].split('?v=')[1]
+    }
+
 
 def main(username):
     user = User.objects.filter(username=username)[0]
     my_profile = models.myProfile.objects.filter(user=user)
     forms_phone = my_profile[0].forms_phone
-    
-    #response = requests.get(server_static + 'media/json/control/enterprises.json').json()
-    #enterprise = random.choice(response['list'])
 
     amount = '{:.2f}'.format(my_profile[0].amount)
     return{
@@ -64,7 +72,6 @@ def main(username):
             'amount': amount.replace('.', ','),
             'amount_is': True if float(my_profile[0].amount) >= 200 else False,
             'first': forms_phone
-            #'enterprise': enterprise,
         }
     }
 
@@ -148,7 +155,6 @@ def configs_get():
     response = requests.get(server_static + 'media/json/control/paggue.json')
     if response.status_code == 200:
         data = response.json()
-        print(data)
         status = True
         message = 'Configurações recuperadas com sucesso!'
         containers = {
@@ -612,7 +618,6 @@ def likeVideo(username, useridparam, vdid):
 
     userViewVideo.objects.create(userId=useridparam, videoId=vdid)
     amount = '{:.2f}'.format(pp.amount)
-    print(amount)
     
     return {
         'STATUS': 'OK',

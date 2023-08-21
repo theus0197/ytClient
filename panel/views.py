@@ -87,20 +87,23 @@ def uploadFile(request):
         
         controller.convert_to_png(png_file_path)
 
-
     return redirect('/panel/configs')
+
 def panelConfig(request):
     if request.user.is_authenticated:
         if controller.verify_account(request.user):
-
             headerMain = controller.returnColor('headerMain')
             primaryColor = controller.returnColor('primaryColor')
             rateLimit = controller.returnConfig('rateLimit')
+            welcomePopup = controller.returnConfig('welcomePopup')
+            welcomeLinkVideo = controller.returnConfig('welcomeLinkVideo')
             
             return render(request, 'indexAdmin/apps/config.html', {
                 'configuracao': headerMain,
                 'primarycolor': primaryColor,
                 'ratelimit': rateLimit,
+                'welcome_popup': welcomePopup,
+                'welcome_link_video': welcomeLinkVideo,
                 'MEDIA_URL': settings.MEDIA_URL
                 }
             )
@@ -116,7 +119,6 @@ def updateColors(request):
         if request.user.is_authenticated:
             if controller.verify_account(request.user):
                 data = request.body.decode('utf-8')
-
                 controller.updateColor(data)
                 
                 return JsonResponse({
