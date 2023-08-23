@@ -18,7 +18,7 @@ import json
 from django.db import connection
 
 #server_static  = 'https://frogti.com/'
-server_static  = 'http://127.0.0.1:8080/'
+server_static  = 'http://127.0.0.1:8081/'
 
 def load_json(data):
     try:

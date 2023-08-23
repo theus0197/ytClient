@@ -38,6 +38,10 @@ class RequestHandler {
         return `{"color": "${string}"}`
     }
 
+    function convertPopupToJson(string) {
+        return `{"color": "${string}"}`
+    }
+
     function sendToRoute() {
         let dataToSend = []
 
@@ -46,6 +50,15 @@ class RequestHandler {
             r.baseUrl = '';
             let colors = document.querySelectorAll('.opts input')
             let ratelimit = document.querySelector('#ratelimit').value
+            /*let configPopups = document.querySelectorAll('.config-popups');
+            configPopups.forEach(element => {
+                data = {
+                    "nameUpdate": `${element.name}`,
+                    "type": "popupScheme",
+                    "color": convertPopupToJson(element.value)
+                }
+                dataToSend.push(data)
+            });*/
             
             colors.forEach(element => {
                 if (element.name) {

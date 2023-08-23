@@ -13,11 +13,7 @@ import os
 def index(request):
     if request.user.is_authenticated:
         if controller.verify_account(request.user):
-            response = controller.index()
             return redirect('/panel/users')
-            return render(request, 'indexAdmin/index.html', {
-                'index': response
-            })
         else:
             return redirect('/')
     else:
@@ -219,9 +215,6 @@ def getVideoData(request):
                 'containers':{}
             })
         
-    
-    
-
 @csrf_exempt
 def get_users(request):
     if request.method == 'POST':

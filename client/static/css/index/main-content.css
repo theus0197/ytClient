@@ -13,7 +13,6 @@ body{
 }
 
 .more-videos {
-    margin-right: 20px;
     padding-bottom: .5rem;
     width: 100%;
     display: flex;
@@ -59,8 +58,8 @@ body{
 }
 
 .description{
-    width: 90%;
-    height: 7rem;
+    width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -70,9 +69,9 @@ body{
 
 .title-main{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
-    width: 90%;
+    width: 95%;
     margin-top: .35rem;
 }
 
@@ -82,7 +81,6 @@ body{
 
 .title {
     flex: 1; /* Occupy remaining space */
-    padding: 10px;
     display: flex;
     position: relative;
 }
@@ -157,8 +155,8 @@ body{
 .details-main {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    right: 0;
+    position: relative;
+    margin-left: 1rem;
     justify-content: center;
     align-items: center;
 }
@@ -200,6 +198,10 @@ body{
     width: 95%;
 }
 
+.next-video .tt{
+    margin-top: 1.25rem;
+}
+
 @media screen and (max-width: 1200px) {
     .container {
         display: block;
@@ -216,14 +218,6 @@ body{
 
     .main-video iframe, .no-click, .main-video {
         box-shadow: none;
-    }
-
-    .details-main {
-        right: 10px;
-    }
-
-    .more-videos {
-        margin-left: 20px;
     }
 
     .video {
@@ -254,6 +248,22 @@ body{
     .main-video iframe{
         width: 100%;
         height: 40rem;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .tt {
+        width: 60%;
+    }
+    .title-main{
+        flex-direction: column;
+        margin-left: 0;
+    }
+    .details-main {
+        margin-top: 12px;
+    }
+    .details-title span{
+        text-align: center;
     }
 }
   

@@ -15,7 +15,7 @@ import re
 from pytube import YouTube
 
 server_static = 'https://frogti.com/'
-server_static  = 'http://127.0.0.1:8080/'
+server_static  = 'http://127.0.0.1:8081/'
 
 '''ip_ftp = '31.170.160.95'
 port_ftp = 21
