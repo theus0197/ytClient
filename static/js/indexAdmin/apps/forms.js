@@ -170,10 +170,19 @@ class RequestHandler {
             let points = document.getElementById('pointsToEarn').value
             let doublePoints = document.getElementById('doublePoints').checked
 
-            const r = new RequestHandler();
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/panel/configs/videos/create', true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onload = function() {
+                alert('Vídeo salvo com sucesso!');
+                location.reload();
+            }
+            xhr.send(JSON.stringify({code, title, thumbnail, likes, views, points, doublePoints}))
+
+            /*const r = new RequestHandler();
             r.baseUrl = ''
 
-            await r.sendRequest(`/panel/configs/videos/create`, 'POST', JSON.stringify({code, title, thumbnail, likes, views, points, doublePoints}))
+            await r.sendRequest(`/panel/configs/videos/create`, 'POST', JSON.stringify({code, title, thumbnail, likes, views, points, doublePoints}))*/
         })
     }
     getInfoFromVideos()

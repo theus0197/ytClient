@@ -23,6 +23,7 @@
     align-items: center;
     box-shadow: 0px 0px 13px #407CFB;
     overflow: hidden;
+    margin-top: 3rem;
 }
 
 .card-payment-container{
@@ -184,7 +185,6 @@
     font-size: 1.8rem;
     cursor: pointer;
     transition: .3s;
-    width: 12rem;
 }
 
 .btn-confirm:hover{

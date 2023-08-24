@@ -231,15 +231,16 @@ def convert_to_png(input_path):
 
 def updateColor(data):
     data = load_json(data)
-    color = data['color']
-    name = data['nameUpdate']
-    objects = cmodels.pageConfigurations.objects.filter(name=name)
-    if objects.exists():
-        objects[0].color = color
-        objects[0].save()
-        return 'Registro atualizado com sucesso.'
-    else:
-        return 'Registro com o nome especificado não encontrado.'  
+    for item in data['listData']:
+        color = item['value']
+        name = item['nameUpdate']
+        objects = cmodels.pageConfigurations.objects.filter(name=name)
+        if objects.exists():
+            obj = objects[0]
+            obj.config = color
+            obj.save()
+
+    return 'Registros atualizado com sucesso.'
         
 def updateConfiguration(name, data):
     try:
@@ -253,20 +254,14 @@ def updateConfiguration(name, data):
 def returnColor(component):
     try:
         config = cmodels.pageConfigurations.objects.get(name=component).config
-        dataJson = json.loads(config)
-        return dataJson['color']
+        return config
     except cmodels.pageConfigurations.DoesNotExist:
         return None
 
 def returnConfig(component):
     try:
         config = cmodels.pageConfigurations.objects.get(name=component).config
-        dataJson = json.loads(config)
-        
-        try:
-            return dataJson['color']
-        except:
-            return dataJson
+        return config
     except cmodels.pageConfigurations.DoesNotExist:
         return None
 
@@ -377,7 +372,7 @@ def delete_users(data):
 
     try:
         query = User.objects.get(username=username)
-        #query.delete()
+        query.delete()
         status = True
         message = 'Usuário removido com sucesso"'
     except:

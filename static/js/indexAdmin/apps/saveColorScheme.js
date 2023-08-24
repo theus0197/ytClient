@@ -38,10 +38,6 @@ class RequestHandler {
         return `{"color": "${string}"}`
     }
 
-    function convertPopupToJson(string) {
-        return `{"color": "${string}"}`
-    }
-
     function sendToRoute() {
         let dataToSend = []
 
@@ -50,33 +46,42 @@ class RequestHandler {
             r.baseUrl = '';
             let colors = document.querySelectorAll('.opts input')
             let ratelimit = document.querySelector('#ratelimit').value
-            /*let configPopups = document.querySelectorAll('.config-popups');
-            configPopups.forEach(element => {
-                data = {
-                    "nameUpdate": `${element.name}`,
-                    "type": "popupScheme",
-                    "color": convertPopupToJson(element.value)
-                }
-                dataToSend.push(data)
-            });*/
             
             colors.forEach(element => {
                 if (element.name) {
                     data = {
                         "nameUpdate": `${element.name}`,
                         "type": "colorScheme",
-                        "color": convertColorToJson(element.value)
+                        "value": element.value   //convertColorToJson(element.value)
                     }
                     dataToSend.push(data)
                 }
             });
 
-            await r.sendRequest('/panel/configs/updateRatelimit', 'PUT', ratelimit)
+            //await r.sendRequest('/panel/configs/updateRatelimit', 'PUT', ratelimit)
 
-            dataToSend.forEach(async (element, index) => {
+            /*dataToSend.forEach(async (element, index) => {
                 await r.sendRequest(`/panel/configs/updateColors`, 'PUT', JSON.stringify(element))
-            })
-            alert('Alterações salvas com sucesso!')
+            })*/
+            var xhr = new XMLHttpRequest();
+            xhr.open('PUT', '/panel/configs/updateColors', true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        if(response.status){
+                            alert('Alterações salvas com sucesso!');
+                        }else{
+                            alert(response.message);
+                        }
+                }else{
+                    alert('Erro ao realizar chamada!');
+                }
+            }
+            xhr.send(JSON.stringify({
+                'listData': dataToSend
+            }));
+            
         })
 
     }

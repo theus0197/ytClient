@@ -13,7 +13,7 @@ function sleep(ms) {
         }
     };
 
-});
+});*/
 
 function cpf(v){
     v=v.replace(/\D/g,"");
@@ -21,9 +21,9 @@ function cpf(v){
     v=v.replace(/(\d{3})(\d)/,"$1.$2");
     v=v.replace(/(\d{3})(\d)/,"$1-$2");
     return v;
-}*/
+}
 
-document.querySelector('#payment').addEventListener('keyup', function(e){
+/*document.querySelector('#payment').addEventListener('keyup', function(e){
     value = document.querySelector('#my-amount').innerText;
     if(e.target.value >= 200){
         if(e.target.value > parseFloat(value)){
@@ -40,7 +40,7 @@ document.querySelector('#payment').addEventListener('keyup', function(e){
         document.querySelector('#you-pay').innerText = '-'
         document.querySelector('#vp-pay').innerText = '-'
     }
-})
+})*/
 
 document.getElementsByClassName('btn-confirm-center')[0].addEventListener('click', function(){
     draw()
@@ -51,7 +51,15 @@ function draw(){
     var first_name = document.getElementById('first-name').value;
     var last_name = document.getElementById('last-name').value;
     var amount = document.getElementById('payment').value;
-    if(amount >= 1200){
+    var minDraw = document.getElementById('avaible-draw').value;
+    try{
+        minDrawFormated = minDraw.replace(' ', '');
+        minDrawFormated = minDrawFormated.replace('R$', '');
+        minDrawFormated = minDrawFormated.replace('.', '');
+        minDrawFormated = minDrawFormated.replace(',', '.');
+        minDrawFloat = parseFloat(minDrawFormated);
+    }catch(e){}
+    if(amount >= minDrawFloat){
         var data = {
             'amount': amount,
             'first_name': first_name,
@@ -76,7 +84,7 @@ function draw(){
         }
         xhr.send(JSON.stringify(data));
     }else{
-        alert('Mínimo para saque é R$1.200,00');
+        alert('Mínimo para saque é de R$', minDraw);
     }
 }
 

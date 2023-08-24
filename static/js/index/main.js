@@ -163,7 +163,8 @@ document.getElementsByClassName("modal-close-alerts")[1].addEventListener("click
 
                 else if(response.STATUS == 'OK'){
                     if(response.MESSAGE == 'LIKED'){
-                        document.getElementsByClassName('my-amount')[0].value = response.AMOUNT;
+                        console.log(response.AMOUNT);
+                        document.getElementsByClassName('my-amount')[0].innerText = response.AMOUNT;
                     }
                 }
 

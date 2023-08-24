@@ -14,6 +14,21 @@
             <h2>CONFIGS</h2>
             <div class="scroll">
                 <div class="color-scheme">
+                  <p style="font-size: 14px; font-weight: bold;">Config Draw</p><hr>
+                  <div class="opts">
+                      <label for="headerMain">Permited Draw</label>
+                      <input type="text" class="config-popups" value="{{ min_draw }}" placeholder="Message..." name="minDraw">
+                  </div>
+                  <div class="opts">
+                      <label for="headerMain">Video Draw</label>
+                      <input type="text" class="config-popups" value="{{ video_reedem }}" placeholder="Message..." name="linkVideoReedem">
+                  </div>
+                  <div class="opts">
+                      <label for="headerMain">URL Draw</label>
+                      <input type="text" class="config-popups" value="{{ url_reedem }}" placeholder="Message..." name="urlReedem">
+                  </div>
+                </div>
+                <div class="color-scheme">
                   <p style="font-size: 14px; font-weight: bold;">Popups</p><hr>
                   <div class="opts">
                       <label for="headerMain">Popup Welcome Message</label>
@@ -50,7 +65,7 @@
                       <button type="submit" style="margin-top: 20px!important;">Send</button>
                   </form>
                   </div>
-                  <div class="opts">
+                  <div class="opts opts-image">
                     <img src="{{ MEDIA_URL }}/logo.png">
                   </div>
                 </div>

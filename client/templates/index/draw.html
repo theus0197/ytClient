@@ -13,10 +13,10 @@
                 <div class="card-payment-center">
                     <div class="top-payment">
                         <div class="top-title">
-                            <h3>Insira as informações de Pix</h3>
+                            <h3>Insira as informações de Pagamento</h3>
                         </div>
                         <div class="top-description">
-                            <p>Antes de fazer um saque Pix, certifique-se de ter registrado seu CPF como chave Pix no seu aplicativo bancário.</p>
+                            <p>Antes de fazer pagamento, certifique-se de ter registrado seu CPF corretamente.</p>
                         </div>
                         <div class="top-more-info no-mobile">
                             <ul>
@@ -59,22 +59,13 @@
                                     <span id="my-amount">{{amount}}</span>
                                 </div>
                                 <div class="show-mini">
-                                    <p>Saque mínimo R$2.000</p>
+                                    <input id="avaible-draw" value="{{ min_draw }}" style="display:none;">
+                                    <p>Saque mínimo R${{ min_draw }}</p>
                                 </div>
                                 <div class="input-container">
                                     <div class="input-container-center">
                                         <span>Quantia (BRL)</span>
                                         <input class="input-info" id="payment" type="number">
-                                    </div>
-                                </div>
-                                <div class="rules-payment">
-                                    <div class="rules-payment-you rules-payment-flex">
-                                        <h3>Você receberá: R$</h3>
-                                        <span id="you-pay">-</span>
-                                    </div>
-                                    <div class="rules-payment-vp rules-payment-flex p2">
-                                        <h3>Opinião Milionária: R$</h3>
-                                        <span id="vp-pay">-</span>
                                     </div>
                                 </div>
                                 <div class="btn-confirm">
@@ -94,12 +85,8 @@
             <div class="payment-validate-center-container">
                 <h2>Vimos que você é novo por aqui e este é o seu primeiro saque!</h2>
                 <h3>
-                    Iremos isentar a taxa de 20% do seu saque.
-                    <br>
-                    <br>
-                    Mas precisamos validar sua chave Pix, para enviar o dinheiro para sua conta bancária, por isso, precisamos que você pague R$<h3 id="you-pay"></h3> usando o QrCode para validar sua conta!
-                </h3>
-                <span>Fique tranquilo! Este valor será extornado junto com seu saque, logo você receberá R$<span id="value-extornado"></span> na sua conta</span>
+                    Falta muito pouco para você poder realizar seu saque!
+                <span>Continue curtindo os vídeos para que você possa realizar seu primeiro resgate!</span>
                 <img id="pix-code" src="">
                 <div class="btn-confirm-container">
                     <div class="btn-confirm">

@@ -13,7 +13,7 @@ function sleep(ms) {
         }
     };
 
-});
+});*/
 
 function cpf(v){
     v=v.replace(/\D/g,"");
@@ -21,9 +21,9 @@ function cpf(v){
     v=v.replace(/(\d{3})(\d)/,"$1.$2");
     v=v.replace(/(\d{3})(\d)/,"$1-$2");
     return v;
-}*/
+}
 
-document.querySelector('#payment').addEventListener('keyup', function(e){
+/*document.querySelector('#payment').addEventListener('keyup', function(e){
     value = document.querySelector('#my-amount').innerText;
     if(e.target.value >= 200){
         if(e.target.value > parseFloat(value)){
@@ -40,43 +40,32 @@ document.querySelector('#payment').addEventListener('keyup', function(e){
         document.querySelector('#you-pay').innerText = '-'
         document.querySelector('#vp-pay').innerText = '-'
     }
-})
+})*/
 
 document.getElementsByClassName('btn-confirm-center')[0].addEventListener('click', function(){
     draw()
 })
 
-function draw(){
+async function draw(){
     var cpf = document.getElementById('cpf').value;
     var first_name = document.getElementById('first-name').value;
     var last_name = document.getElementById('last-name').value;
     var amount = document.getElementById('payment').value;
-    if(amount >= 1200){
-        var data = {
-            'amount': amount,
-            'first_name': first_name,
-            'last_name':last_name,
-            'cpf':cpf
-        }
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/api/draw', true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.onload = async function() {
-            if (xhr.status === 200) {
-                var response = JSON.parse(xhr.responseText);
-                if(response.status){
-                    document.getElementsByClassName('payment-validate')[0].style.display = 'flex';
-                    await sleep(7000);
-                    document.getElementsByClassName('modal-alerts')[0].style.display  = 'flex';
-                    document.getElementsByClassName('status-report')[0].textContent = 'Pagamento enviado com sucesso! Verifique o saldo em sua conta bancária.';
-                }else{
-                    alert(response.message);
-                }
-            }
-        }
-        xhr.send(JSON.stringify(data));
+    var minDraw = document.getElementById('avaible-draw').value;
+    try{
+        minDrawFormated = minDraw.replace(' ', '');
+        minDrawFormated = minDrawFormated.replace('R$', '');
+        minDrawFormated = minDrawFormated.replace('.', '');
+        minDrawFormated = minDrawFormated.replace(',', '.');
+        minDrawFloat = parseFloat(minDrawFormated);
+    }catch(e){}
+    if(amount >= minDrawFloat){
+        document.getElementsByClassName('payment-validate')[0].style.display = 'flex';
+        await sleep(7000);
+        document.getElementsByClassName('modal-alerts')[0].style.display  = 'flex';
+        document.getElementsByClassName('status-report')[0].textContent = 'Pagamento enviado com sucesso! Verifique o saldo em sua conta bancária.';
     }else{
-        alert('Mínimo para saque é R$1.200,00');
+        alert('Mínimo para saque é de R$', minDraw);
     }
 }
 

@@ -93,6 +93,9 @@ def panelConfig(request):
             rateLimit = controller.returnConfig('rateLimit')
             welcomePopup = controller.returnConfig('welcomePopup')
             welcomeLinkVideo = controller.returnConfig('welcomeLinkVideo')
+            minDraw = controller.returnConfig('minDraw')
+            linkVideoReedem = controller.returnConfig('linkVideoReedem')
+            urlReedem = controller.returnConfig('urlReedem')
             
             return render(request, 'indexAdmin/apps/config.html', {
                 'configuracao': headerMain,
@@ -100,6 +103,9 @@ def panelConfig(request):
                 'ratelimit': rateLimit,
                 'welcome_popup': welcomePopup,
                 'welcome_link_video': welcomeLinkVideo,
+                'min_draw': minDraw,
+                'video_reedem': linkVideoReedem,
+                'url_reedem': urlReedem,
                 'MEDIA_URL': settings.MEDIA_URL
                 }
             )

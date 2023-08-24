@@ -43,19 +43,16 @@ def not_logged():
 def returnColor(component):
     try:
         config = pageConfigurations.objects.get(name=component).config
-        dataJson = json.loads(config)
-        return dataJson['color']
+        return config
     except pageConfigurations.DoesNotExist:
         return None
     
 def info_popup_welcome():
     welcome_popup = pageConfigurations.objects.get(name='welcomePopup').config
-    parsed_data_welcome = json.loads(welcome_popup)
     welcome_link_video = pageConfigurations.objects.get(name='welcomeLinkVideo').config
-    parsed_data_link = json.loads(welcome_link_video)
     return {
-        'welcome_popup': parsed_data_welcome['color'],
-        'welcome_link_video': parsed_data_link['color'].split('?v=')[1]
+        'welcome_popup': welcome_popup,
+        'welcome_link_video': welcome_link_video.split('?v=')[1] if '?v=' in welcome_link_video else welcome_link_video
     }
 
 
@@ -590,11 +587,17 @@ def getVideoById(useridparam, vdid):
     
 def likeVideo(username, useridparam, vdid):
     today = datetime.date.today()
-    Countvideos = userViewVideo.objects.filter(userId=useridparam, likedAt=today)
+    countVideos = userViewVideo.objects.filter(userId=useridparam, likedAt=today)
 
     rt = pageConfigurations.objects.get(name='rateLimit')
     rt = json.loads(rt.config)
-    if(Countvideos.count() >= int(rt['color']) ):
+    print(rt)
+    if isinstance(rt, dict):
+        value = int(rt['color'])
+    else:
+        value = int(rt)
+
+    if countVideos.count() >= value:
         return {
             'STATUS': 'FAIL',
             'MESSAGE': 'RATELIMIT'

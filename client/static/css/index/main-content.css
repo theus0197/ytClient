@@ -265,9 +265,6 @@ body{
 }
 
 @media screen and (max-width: 900px){
-    .tt {
-        width: 60%;
-    }
     .title-main{
         flex-direction: column;
         margin-left: 0;
@@ -281,12 +278,19 @@ body{
 }
 
 @media screen and (max-width: 1000px){
+    .tt {
+        width: 100%;
+        text-align: center;
+    }
     .next-video{
-        height: 28rem;
+        min-height: 24rem;
         width: 31rem;
     }
     .next-video:hover .title{
         margin-top: 1.25rem;
+    }
+    .next-video .details{
+        display:none;
     }
 }
 
@@ -351,7 +355,7 @@ body{
     align-items: center;
 }
 
-.btn-confirm-apresentation{
+.btn-confirm-apresentation-container div{
     width: fit-content;
     height: fit-content;
     font-size: 2.1rem;
@@ -364,6 +368,8 @@ body{
     cursor: pointer;
     animation: pulse 1.5s ease-in-out infinite;
 }
+
+
 
 @keyframes pulse {
     0%, 100% {

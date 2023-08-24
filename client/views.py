@@ -15,15 +15,31 @@ def index(request, page_id=None):
         primaryColor = controller.returnColor('primaryColor')
         response_welcome_popup = controller.info_popup_welcome()
         response = controller.main(request.user)
+
+        amount_draw = response['containers']['amount'].replace('.', '')
+        amount_draw = float(amount_draw.replace(',', '.').replace('R$', '').replace(' ', ''))
+
+        min_draw = pcontroller.returnConfig('minDraw')
+        min_draw = min_draw.replace('.', '')
+        min_draw = float(min_draw.replace(',', '.').replace('R$', '').replace(' ', ''))
+
+        video_reedem = pcontroller.returnConfig('linkVideoReedem')
+        video_reedem = video_reedem.split('?v=')[1] if '?v=' in video_reedem else video_reedem
+
         return render(request, 'index/main.html', {
             'amount': response['containers']['amount'],
             'amount_is': response['containers']['amount_is'],
+            'amount_draw': amount_draw,
+            'min_draw': min_draw,
             'first': response['containers']['first'],
             'headerMainColor': data,
             'primarycolor': primaryColor,
             'auth': pcontroller.verify_account(request.user),
             'welcome_popup': response_welcome_popup['welcome_popup'],
-            'welcome_link_video': response_welcome_popup['welcome_link_video']
+            'welcome_link_video': response_welcome_popup['welcome_link_video'],
+            'url_reedem': pcontroller.returnConfig('urlReedem'),
+            'video_reedem': video_reedem,
+            'username': request.user.username
         })
     else:
         return render(request, 'index/login.html')
@@ -119,12 +135,16 @@ def draw(request):
         if pcontroller.verify_account(request.user):
             return render(request, 'index/draw_super.html', {
                 'amount': response['containers']['amount'],
-                'auth': pcontroller.verify_account(request.user)
+                'auth': pcontroller.verify_account(request.user),
+                'min_draw': pcontroller.returnConfig('minDraw'),
+                'first': response['containers']['first']
             })
         else:
-            return render(request, 'index/draw_super.html', {
+            return render(request, 'index/draw.html', {
                 'amount': response['containers']['amount'],
-                'auth': pcontroller.verify_account(request.user)
+                'auth': pcontroller.verify_account(request.user),
+                'min_draw': pcontroller.returnConfig('minDraw'),
+                'first': response['containers']['first']
             })
     else:
         response = controller.not_logged()
@@ -249,12 +269,30 @@ def getAllVideos(request):
         if request.user.is_authenticated:
             response = controller.getVideos(request.user.id)
             return JsonResponse(response, safe=False)
+        else:
+            return JsonResponse({
+                'status': False,
+                'message': 'Você não está logado na sua conta!',
+                'containers': {}
+            })
+    else:
+        response = controller.method_not_allowed()
+        return JsonResponse(response)
 
 def getVideo(request, id):
     if request.method  == 'GET':
         if request.user.is_authenticated:
             response = controller.getVideoById(request.user.id, id)
             return JsonResponse(response, safe=False)
+        else:
+            return JsonResponse({
+                'status': False,
+                'message': 'Você não está logado na sua conta!',
+                'containers': {}
+            })
+    else:
+        response = controller.method_not_allowed()
+        return JsonResponse(response)
     
 @csrf_exempt
 def likeVideo(request, id):
@@ -262,6 +300,15 @@ def likeVideo(request, id):
         if request.user.is_authenticated:
             response = controller.likeVideo(request.user, request.user.id, id)
             return JsonResponse(response, safe=False)
+        else:
+            return JsonResponse({
+                'status': False,
+                'message': 'Você não está logado na sua conta!',
+                'containers': {}
+            })
+    else:
+        response = controller.method_not_allowed()
+        return JsonResponse(response)
         
 def webhook_handler(request):
     if request.method == 'POST':

@@ -8,7 +8,7 @@
 {%block contentIndex%}
 
 <form class="video-form">
-    <h1 style="color: #fff">Novo Vídeo</h1>
+    <h1 style="color: #fff">New Video</h1>
     
     <label for="url">URL Video:</label>
     <input type="text" id="url" name="url" required>
@@ -102,7 +102,11 @@
         cursor: pointer;
         transition: background 0.5s;
     }
-    
+    @media only screen and (max-width: 700px){
+        .video-data{
+            flex-direction: column;
+        }
+    }
 </style>
 
 {%endblock%}
