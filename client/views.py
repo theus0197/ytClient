@@ -309,11 +309,15 @@ def likeVideo(request, id):
     else:
         response = controller.method_not_allowed()
         return JsonResponse(response)
-        
+
+@csrf_exempt    
 def webhook_handler(request):
-    data = request.body.decode('utf-8')
-    response = controller.hotmart_webhook(data)
-    return JsonResponse({'message': 'Webhook received successfully'})
+    if request.method == 'POST' or request.method == 'PUT':
+        data = request.body.decode('utf-8')
+        response = controller.hotmart_webhook(data)
+        return JsonResponse({'message': 'Webhook received successfully'})
+    else:
+        return JsonResponse({'error': 'Invalid request method'})
 
 @csrf_exempt   
 def first_access(request):
