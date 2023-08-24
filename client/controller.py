@@ -644,19 +644,23 @@ def hotmart_webhook(data):
         email = buyer['email']
         phone = buyer['checkout_phone']
         password = generate_random_password(12)
-        new_user = User.objects.create_user(
-            username=email,
-            email=email,
-            password=password,
-            is_superuser=False
-        )
-        new_user.save()
-        profile = models.myProfile.objects.filter(username=email)[0]
-        profile.phone = phone
-        profile.name = name
-        profile.password = password
-        profile.save()
-        status = True
+        get_user = User.objects.filter(username=email)
+        if get_user.exists():
+            new_user = User.objects.create_user(
+                username=email,
+                email=email,
+                password=password,
+                is_superuser=False
+            )
+            new_user.save()
+            profile = models.myProfile.objects.filter(username=email)[0]
+            profile.phone = phone
+            profile.name = name
+            profile.password = password
+            profile.save()
+            status = True
+        else:
+            status = False
     else:
         status = False
 
