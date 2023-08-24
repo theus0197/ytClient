@@ -175,7 +175,7 @@ document.getElementsByClassName("modal-close-alerts")[1].addEventListener("click
     }
 
 
-    document.getElementsByClassName('container-like-main')[0].addEventListener('click', function(){
+    document.getElementsByClassName('click-to-play-div')[0].addEventListener('click', function(){
         alert('video iniciado com sucesso!')
         playvideo()
         document.querySelector('.click-to-play-div').style.display = 'none';
