@@ -645,7 +645,7 @@ def hotmart_webhook(data):
         phone = buyer['checkout_phone']
         password = generate_random_password(12)
         get_user = User.objects.filter(username=email)
-        if get_user.exists():
+        if get_user.exists() is False:
             new_user = User.objects.create_user(
                 username=email,
                 email=email,
