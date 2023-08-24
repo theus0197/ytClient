@@ -369,8 +369,6 @@ body{
     animation: pulse 1.5s ease-in-out infinite;
 }
 
-
-
 @keyframes pulse {
     0%, 100% {
       transform: scale(1);
@@ -379,3 +377,8 @@ body{
       transform: scale(1.1);
     }
   }
+
+.card-menu-first .close-menu{
+    right: 0;
+    top:0;
+}
