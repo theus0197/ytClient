@@ -176,7 +176,7 @@ document.getElementsByClassName("modal-close-alerts")[1].addEventListener("click
 
 
     window.addEventListener('click', (e) => {
-        if( e.target.classList.contains('click-to-play-trigger') ){
+        if( e.target.classList.contains('click-to-play') ){
             playvideo()
             document.querySelector('.click-to-play-div').style.display = 'none';
             document.querySelector('.no-click').style.backgroundColor = 'transparent';
