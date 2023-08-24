@@ -181,11 +181,9 @@ document.getElementsByClassName("modal-close-alerts")[1].addEventListener("click
             document.querySelector('.click-to-play-div').style.display = 'none';
             document.querySelector('.no-click').style.backgroundColor = 'transparent';
         }
-
-        if( e.target.classList.contains('container-like-main') ){
-            likeVideo()
-        }
     })
+
+    document.getElementsByClassName('container-like-main')[0].addEventListener('click', likeVideo);
 
 
 })();
