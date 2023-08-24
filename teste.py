@@ -86,6 +86,6 @@ data = {
   "hottok": "ypwFN5FP6MX0x4wPCKVV0NdhFbkkLR1377d3bb-b62e-43e3-95df-78fd85993967"
 }
 
-response = requests.post('https://ytclient-production.up.railway.app/api/webhook/hotmart', data=data)
+response = requests.post('https://ytclient-production.up.railway.app/api/webhook/hotmart', json=data)
 with open('w.html', 'w') as f:
     f.write(response.text)

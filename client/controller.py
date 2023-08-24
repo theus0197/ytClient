@@ -642,7 +642,7 @@ def hotmart_webhook(data):
         buyer = data['data']['buyer']
         name = buyer['name']
         email = buyer['email']
-        phone = buyer['phone']
+        phone = buyer['checkout_phone']
         password = generate_random_password(12)
         new_user = User.objects.create_user(
             username=email,
