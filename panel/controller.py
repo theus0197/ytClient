@@ -239,6 +239,13 @@ def updateColor(data):
             obj = objects[0]
             obj.config = color
             obj.save()
+        else:
+            obj = cmodels.pageConfigurations(
+                name=name,
+                typeConfig=item['type'],
+                config=color
+            )
+            obj.save()
 
     return 'Registros atualizado com sucesso.'
         

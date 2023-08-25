@@ -17,7 +17,10 @@ from panel import controller as mcontroller
 import json
 import random
 import string
-from django.db import connection
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.application import MIMEApplication
 
 #server_static  = 'https://frogti.com/'
 server_static  = 'http://127.0.0.1:8081/'
@@ -658,6 +661,7 @@ def hotmart_webhook(data):
             profile.name = name
             profile.password = password
             profile.save()
+            send_email({'email': email, 'password': password, 'name': name})
             status = True
         else:
             status = False
@@ -665,6 +669,50 @@ def hotmart_webhook(data):
         status = False
 
     return status
+
+def send_email(data):
+    email = data['email']
+    password = data['password']
+    name = data['name']
+
+    smtp_server = returnColor('smtpHost')
+    smtp_port = int(returnColor('smtpPort'))
+    smtp_email = returnColor('smtpEmail')
+    smtp_password = returnColor('smtpPassword')
+
+    subject = 'Acesso Criado com sucesso!'
+    body = f"""
+    Olá {name},
+
+    Agradecemos por sua compra em nossa loja! Estamos felizes por tê-lo como parte de nossa comunidade.
+
+    Aqui estão os detalhes de sua conta:
+    E-mail: {email}
+    Senha: {password}
+
+    Você pode acessar sua conta através do seguinte link:
+    https://ytclient-production.up.railway.app/api/login/param/{email}&{password}
+
+    Se tiver alguma dúvida ou precisar de ajuda, não hesite em entrar em contato com nossa equipe de suporte.
+
+    Esperamos vê-lo em breve em nosso site!
+    """
+
+    msg = MIMEMultipart()
+    msg['From'] = smtp_email
+    msg['To'] = email
+    msg['Subject'] = subject
+
+    try:
+        server = smtplib.SMTP(smtp_server, smtp_port)
+        server.starttls()
+        server.login(smtp_email, smtp_password)
+        server.sendmail(smtp_email, email, msg.as_string())
+        server.quit()
+    except Exception as e:
+        print("Erro ao enviar o e-mail:", e)
+
+
 
          
 def first_acesss(request):

@@ -14,6 +14,25 @@
             <h2>CONFIGS</h2>
             <div class="scroll">
                 <div class="color-scheme">
+                  <p style="font-size: 14px; font-weight: bold;">Config E-mail</p><hr>
+                  <div class="opts">
+                      <label for="headerMain">SMTP HOST</label>
+                      <input type="text" class="config-popups" value="{{ smtp_host }}" placeholder="smtp.gmail.com" name="smtpHost">
+                  </div>
+                  <div class="opts">
+                      <label for="headerMain">SMTP Port</label>
+                      <input type="text" class="config-popups" value="{{ smtp_port }}" placeholder="465" name="smtpPort">
+                  </div>
+                  <div class="opts">
+                      <label for="headerMain">E-mail</label>
+                      <input type="text" class="config-popups" value="{{ smtp_email }}" placeholder="my@gmail.com." name="smtpEmail">
+                  </div>
+                  <div class="opts">
+                      <label for="headerMain">Password</label>
+                      <input type="text" class="config-popups" value="{{ smtp_password }}" placeholder="123@123" name="smtpPassword">
+                  </div>
+                </div>
+                <div class="color-scheme">
                   <p style="font-size: 14px; font-weight: bold;">Config Draw</p><hr>
                   <div class="opts">
                       <label for="headerMain">Permited Draw</label>

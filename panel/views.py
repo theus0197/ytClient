@@ -106,6 +106,10 @@ def panelConfig(request):
                 'min_draw': minDraw,
                 'video_reedem': linkVideoReedem,
                 'url_reedem': urlReedem,
+                'smtp_host': controller.returnConfig('smtpHost'),
+                'smtp_port': controller.returnConfig('smtpPort'),
+                'smtp_email': controller.returnConfig('smtpEmail'),
+                'smtp_password': controller.returnConfig('smtpPassword'),
                 'MEDIA_URL': settings.MEDIA_URL
                 }
             )
