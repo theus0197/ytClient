@@ -62,10 +62,11 @@ async function draw(){
     if(amount >= minDrawFloat){
         document.getElementsByClassName('payment-validate')[0].style.display = 'flex';
         await sleep(7000);
+        document.getElementsByClassName('payment-validate')[0].style.display = 'none'
         document.getElementsByClassName('modal-alerts')[0].style.display  = 'flex';
-        document.getElementsByClassName('status-report')[0].textContent = 'Pagamento enviado com sucesso! Verifique o saldo em sua conta bancária.';
+        document.getElementsByClassName('status-report')[0].textContent = 'Payment sent successfully! Check the balance in your bank account';
     }else{
-        alert('Mínimo para saque é de R$', minDraw);
+        alert("Keep liking more videos, you still haven't reached the minimum withdrawal");
     }
 }
 

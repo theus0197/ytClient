@@ -13,13 +13,14 @@ section{
 
 .main-header{
     width:100%;
-    height: 7rem;
+    height: auto;
     background-color: var(--color-default);
     box-shadow: 0px 0px 13px rgba(0,0,0,0.5);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-bottom: .25rem;
 }
 
 .main-header-center{
@@ -58,26 +59,43 @@ section{
     position:relative;
     width: fit-content;
     height: 80%;
-    background-color: var(--green);
+    background-color: transparent !important;
     padding: 0 3rem;
     border-radius: 1rem;
     transition: .3s;
-    animation: rgbColor 3s infinite alternate;
 }
 
 .main-header-amount-box{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     width: fit-content;
     height: 100%;   
     font-family: 'Rubik', sans-serif;
     color: #fff;
-    font-size: 2.4rem;
+    font-size: 1.8rem;
     font-weight: bold;
     letter-spacing: .15rem;
     user-select: none;
+}
+
+.main-header-amount-box div{
+    width:100%;
+    margin: .35rem;
+}
+.container-title-balance{
+    font-size: 1.4rem;
+}
+.container-balance{
+    font-size: 2.4rem
+}
+.container-credits-balance{
+    margin: 0;
+    margin-left:.25rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 @keyframes rgbColor{

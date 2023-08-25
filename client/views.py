@@ -132,19 +132,25 @@ def confirm_play(request):
 def draw(request):
     if request.user.is_authenticated:
         response = controller.main(request.user)
+        data = controller.returnColor('headerMain')
+        primaryColor = controller.returnColor('primaryColor')
         if pcontroller.verify_account(request.user):
             return render(request, 'index/draw_super.html', {
                 'amount': response['containers']['amount'],
                 'auth': pcontroller.verify_account(request.user),
                 'min_draw': pcontroller.returnConfig('minDraw'),
-                'first': response['containers']['first']
+                'first': response['containers']['first'],
+                'headerMainColor': data,
+                'primarycolor': primaryColor,
             })
         else:
             return render(request, 'index/draw.html', {
                 'amount': response['containers']['amount'],
                 'auth': pcontroller.verify_account(request.user),
                 'min_draw': pcontroller.returnConfig('minDraw'),
-                'first': response['containers']['first']
+                'first': response['containers']['first'],
+                'headerMainColor': data,
+                'primarycolor': primaryColor,
             })
     else:
         response = controller.not_logged()
@@ -314,7 +320,8 @@ def likeVideo(request, id):
 def webhook_handler(request):
     if request.method == 'POST' or request.method == 'PUT':
         data = request.body.decode('utf-8')
-        response = controller.hotmart_webhook(data)
+        host = request.META['HTTP_HOST']
+        response = controller.hotmart_webhook(data, host)
         return JsonResponse({'message': 'Webhook received successfully'})
     else:
         return JsonResponse({'error': 'Invalid request method'})

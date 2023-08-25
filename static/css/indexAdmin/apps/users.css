@@ -1,4 +1,3 @@
-
 .apps{
     width: 100%;
     min-height: 100vh;
@@ -146,6 +145,14 @@
     color: #fff;
 }
 
+.cell-table-email{
+    align-items: flex-start;
+}
+
+.cell-table-email h3{
+    margin-left: .75rem;
+}
+
 .cell-table .status{
     width: 2rem;
     height: 2rem;
@@ -250,4 +257,3 @@
         padding-bottom: 5rem;
     }
 }
-

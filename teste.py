@@ -1,4 +1,8 @@
 import requests
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.application import MIMEApplication
 
 data = {
   "id": "db0bcbfd-45d6-4240-9b2f-4710330e954f",
@@ -19,7 +23,7 @@ data = {
       }
     ],
     "buyer": {
-      "email": "testeComprador271101postman15@example.com",
+      "email": "neysa5924@uorak.com",
       "name": "Teste Comprador",
       "checkout_phone": "99999999900"
     },
@@ -86,6 +90,47 @@ data = {
   "hottok": "ypwFN5FP6MX0x4wPCKVV0NdhFbkkLR1377d3bb-b62e-43e3-95df-78fd85993967"
 }
 
-response = requests.post('https://ytclient-production.up.railway.app/api/webhook/hotmart', json=data)
+response = requests.post('http://127.0.0.1:8080/api/webhook/hotmart', json=data)
 with open('w.html', 'w') as f:
     f.write(response.text)
+
+'''email = 'nathaniel1994@uorak.com'
+password = '123213h21hbni213'
+name = 'Carlos Oliveira'
+host = '127.0.0.1:8080'
+
+smtp_host = 'smtp-mail.outlook.com'
+smtp_port = 587
+smtp_email = 'farias.mts@outlook.com'
+smtp_password = 'Twelve@2975@0197'
+
+subject = 'Acesso Criado com sucesso!'
+body = f"""
+Olá {name},
+
+Agradecemos por sua compra em nossa loja! Estamos felizes por tê-lo como parte de nossa comunidade.
+
+Aqui estão os detalhes de sua conta:
+E-mail: {email}
+Senha: {password}
+
+Você pode acessar sua conta através do seguinte link:
+https://{host}/api/login/param/{email}&{password}
+
+Se tiver alguma dúvida ou precisar de ajuda, não hesite em entrar em contato com nossa equipe de suporte.
+
+Esperamos vê-lo em breve em nosso site!
+"""
+
+msg = MIMEMultipart()
+msg['From'] = smtp_email
+msg['To'] = email
+msg['Subject'] = subject
+msg.attach(MIMEText(body, 'plain'))
+
+server = smtplib.SMTP(smtp_host, smtp_port)
+server.ehlo()
+server.starttls()
+server.login(smtp_email, smtp_password)
+server.sendmail(smtp_email, email, msg.as_string())
+server.quit()'''

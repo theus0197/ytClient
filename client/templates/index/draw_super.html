@@ -13,18 +13,18 @@
                 <div class="card-payment-center">
                     <div class="top-payment">
                         <div class="top-title">
-                            <h3>Insira as informações de Pix Pagamento</h3>
+                            <h3>Enter Payment information</h3>
                         </div>
                         <div class="top-description">
-                            <p>Antes de fazer pagamento, certifique-se de ter registrado seu CPF corretamente.</p>
+                            <p>Before making payment, make sure you have registered your CPF correctly.</p>
                         </div>
                         <div class="top-more-info no-mobile">
                             <ul>
-                                <li>Abra o aplicativo bancário</li>
-                                <li>Vá para a seção Pix do aplicativo bancário</li>
-                                <li>Selecione "Minhas Chaves"</li>
-                                <li>Selecione a opção "Registrar Chave," e registre seu CPF</li>
-                                <li>Assim que seu banco confirmar que a chave está registrada, você poderá receber saques via Pix</li>
+                                <li>Open the banking application</li>
+                                <li>Go to the Pix section of the banking app</li>
+                                <li>Select "My Keys"</li>
+                                <li>Select the option "Registrar Chave" and register your CPF</li>
+                                <li>Once your bank confirms that the key is registered, you will be able to receive withdrawals via Pix</li>
                             </ul>
                         </div>
                     </div>
@@ -33,7 +33,7 @@
                             <div class="form-container">
                                 <div class="input-container">
                                     <div class="input-container-center">
-                                        <span>CPF</span>
+                                        <span>Account</span>
                                         <input class="input-info" id="cpf" type="text">
                                     </div>
                                 </div>
@@ -41,36 +41,36 @@
                             <div class="form-container form-container-flex">
                                 <div class="input-container input-container-flex">
                                     <div class="input-container-center">
-                                        <span>Nome</span>
+                                        <span>First Name</span>
                                         <input class="input-info" id="first-name" type="text">
                                     </div>
                                 </div>
                                 <div class="input-container input-container-flex">
                                     <div class="input-container-center">
-                                        <span>Sobrenome</span>
+                                        <span>Last Name</span>
                                         <input class="input-info" id="last-name" type="text">
                                     </div>
                                 </div>
                             </div>
                             <div class="form-container">
                                 <div class="show_my-amount">
-                                    <h3>Saldo Disponível: </h3>
+                                    <h3>Balance Available: </h3>
                                     <span>R$</span>
                                     <span id="my-amount">{{amount}}</span>
                                 </div>
                                 <div class="show-mini">
                                     <input id="avaible-draw" value="{{ min_draw }}" style="display:none;">
-                                    <p>Saque mínimo R${{ min_draw }}</p>
+                                    <p>Minimum Withdrawal R${{ min_draw }}</p>
                                 </div>
                                 <div class="input-container">
                                     <div class="input-container-center">
-                                        <span>Quantia (BRL)</span>
+                                        <span>Quantity (BRL)</span>
                                         <input class="input-info" id="payment" type="number">
                                     </div>
                                 </div>
                                 <div class="btn-confirm-container">
                                     <div class="btn-confirm">
-                                        <div class="btn-confirm-center">Sacar</div>
+                                        <div class="btn-confirm-center">to withdraw</div>
                                     </div>
                                 </div>
                             </div>
@@ -83,8 +83,7 @@
     <div class="payment-validate">
         <div class="payment-validate-center">
             <div class="payment-validate-center-container">
-                <h2>Vimos que você é novo por aqui e este é o seu primeiro saque!</h2>
-                <span>Seu Pix será enviado em até 5 minutos!</span>
+                <span>Your payment will be sent within 5 minutes!</span>
                 <div class="payment-status">
                     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                      width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
@@ -103,7 +102,7 @@
                             230 136 361 80z"/>
                         </g>
                     </svg>
-                    <h3>Enviando seu Pix, aguarde...</h3>
+                    <h3>Sending your payment, please wait...</h3>
                 </div>
             </div>
         </div>

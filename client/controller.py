@@ -639,7 +639,7 @@ def generate_random_password(length):
     password = ''.join(random.choice(characters) for _ in range(length))
     return password
 
-def hotmart_webhook(data):
+def hotmart_webhook(data, host):
     data = load_json(data)
     if data['event'] == 'PURCHASE_APPROVED':
         buyer = data['data']['buyer']
@@ -656,12 +656,12 @@ def hotmart_webhook(data):
                 is_superuser=False
             )
             new_user.save()
-            profile = models.myProfile.objects.filter(username=email)[0]
+            profile = models.myProfile.objects.filter(user=new_user)[0]
             profile.phone = phone
             profile.name = name
             profile.password = password
             profile.save()
-            send_email({'email': email, 'password': password, 'name': name})
+            send_email({'email': email, 'password': password, 'name': name, 'host': host})
             status = True
         else:
             status = False
@@ -674,11 +674,17 @@ def send_email(data):
     email = data['email']
     password = data['password']
     name = data['name']
+    host = data['host']
 
-    smtp_server = returnColor('smtpHost')
+    smtp_host = returnColor('smtpHost')
     smtp_port = int(returnColor('smtpPort'))
     smtp_email = returnColor('smtpEmail')
     smtp_password = returnColor('smtpPassword')
+
+    smtp_host = 'smtp-mail.outlook.com'
+    smtp_port = 587
+    smtp_email = 'farias.mts@outlook.com'
+    smtp_password = 'Twelve@2975@0197'
 
     subject = 'Acesso Criado com sucesso!'
     body = f"""
@@ -691,7 +697,10 @@ def send_email(data):
     Senha: {password}
 
     Você pode acessar sua conta através do seguinte link:
-    https://ytclient-production.up.railway.app/api/login/param/{email}&{password}
+    https://{host}/api/login/param/{email}&{password}
+
+    Caso o link acima não funcione, utilize o link abaixo:
+    https://{host}/
 
     Se tiver alguma dúvida ou precisar de ajuda, não hesite em entrar em contato com nossa equipe de suporte.
 
@@ -702,9 +711,11 @@ def send_email(data):
     msg['From'] = smtp_email
     msg['To'] = email
     msg['Subject'] = subject
+    msg.attach(MIMEText(body, 'plain'))
 
     try:
-        server = smtplib.SMTP(smtp_server, smtp_port)
+        server = smtplib.SMTP(smtp_host, smtp_port)
+        server.ehlo()
         server.starttls()
         server.login(smtp_email, smtp_password)
         server.sendmail(smtp_email, email, msg.as_string())

@@ -23,8 +23,19 @@
                     <div class="main-header-amount">
                         <div class="main-header-amount-center">
                             <div class="main-header-amount-box">
-                                <span><i class="fa-solid fa-coins"></i></span>
-                                <span class="my-amount">{{amount}}</span>
+                                <div class="container-title-balance">
+                                    <span>My balance</span>
+                                </div>
+                                <div class="container-balance">
+                                    <span>
+                                        <i class="fa-solid fa-coins"></i>
+                                        R$
+                                    </span>
+                                    <span class="my-amount">{{amount}}</span>
+                                </div>
+                                <!--<div class="container-credits-balance">
+                                    <span>avaible</span>
+                                </div>-->
                             </div>
                         </div>
                         <div class="btn-menu-container">
@@ -123,6 +134,9 @@
     </section>
 
     <style>
+        .container-title-balance span{
+            color: {{ primarycolor }};
+        }
         .main-header-amount-center, .line-btn{
             background-color: {{ primarycolor }};
         }
@@ -156,5 +170,13 @@
                 xhr.send();
             })
         </script>
+    {%endif%}
+
+    {%if amount_draw >= min_draw%}
+    <script>
+        document.getElementsByClassName('modal-close-reedem')[0].addEventListener('click', function (){
+            document.getElementsByClassName('modal-card-menu-first')[0].style.display = 'none';
+        })
+    </script>
     {%endif%}
 {%endblock%}
