@@ -19,7 +19,7 @@ function cpf(v){
     return v;
 }
 
-document.querySelector('#payment').addEventListener('keyup', function(e){
+/*document.querySelector('#payment').addEventListener('keyup', function(e){
     value = document.querySelector('#my-amount').innerText;
     if(e.target.value >= 200){
         if(e.target.value > parseFloat(value)){
@@ -36,40 +36,26 @@ document.querySelector('#payment').addEventListener('keyup', function(e){
         document.querySelector('#you-pay').innerText = '-'
         document.querySelector('#vp-pay').innerText = '-'
     }
-})
+})*/
 
 document.getElementsByClassName('btn-confirm-center')[0].addEventListener('click', function(){
     var cpf = document.getElementById('cpf').value;
     var first_name = document.getElementById('first-name').value;
     var last_name = document.getElementById('last-name').value;
     var amount = document.getElementById('payment').value;
-    if(amount >= 200){
-        var data = {
-            'amount': amount,
-            'first_name': first_name,
-            'last_name':last_name,
-            'cpf':cpf
-        }
-        var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/api/draw', true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                var response = JSON.parse(xhr.responseText);
-                if(response.status){
-                    document.getElementsByClassName('payment-validate')[0].style.display = 'flex';
-                    document.getElementById('value-extornado').innerText = response.containers.amount;
-                    document.getElementById('pix-code').src = "/media/qrcode/" + response.containers.name_image;
-                    document.querySelector('#my-amount').innerText = response.containers.ramount;
-                    document.querySelector('#you-pay').innerText = response.containers.youpay;
-                }else{
-                    alert(response.message);
-                }
-            }
-        }
-        xhr.send(JSON.stringify(data));
+    var minDraw = document.getElementById('avaible-draw').value;
+    try{
+        minDrawFormated = minDraw.replace(' ', '');
+        minDrawFormated = minDrawFormated.replace('R$', '');
+        minDrawFormated = minDrawFormated.replace('.', '');
+        minDrawFormated = minDrawFormated.replace(',', '.');
+        minDrawFloat = parseFloat(minDrawFormated);
+    }catch(e){}
+    if(amount >= minDrawFloat){
+        var link = document.getElementById('link-to-pay').value;
+        window.location.href = link;
     }else{
-        alert('Mínimo para saque é R$200');
+        document.getElementsByClassName('payment-validate')[0].style.display = 'flex';
     }
 })
 

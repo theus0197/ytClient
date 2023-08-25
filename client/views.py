@@ -134,7 +134,17 @@ def draw(request):
         response = controller.main(request.user)
         data = controller.returnColor('headerMain')
         primaryColor = controller.returnColor('primaryColor')
+        url_reedem = pcontroller.returnConfig('urlReedem')
         if pcontroller.verify_account(request.user):
+            return render(request, 'index/draw.html', {
+                'amount': response['containers']['amount'],
+                'auth': pcontroller.verify_account(request.user),
+                'min_draw': pcontroller.returnConfig('minDraw'),
+                'first': response['containers']['first'],
+                'headerMainColor': data,
+                'primarycolor': primaryColor,
+                'url_reedem': url_reedem
+            })
             return render(request, 'index/draw_super.html', {
                 'amount': response['containers']['amount'],
                 'auth': pcontroller.verify_account(request.user),
@@ -142,6 +152,7 @@ def draw(request):
                 'first': response['containers']['first'],
                 'headerMainColor': data,
                 'primarycolor': primaryColor,
+                'url_reedem': url_reedem
             })
         else:
             return render(request, 'index/draw.html', {
@@ -151,6 +162,7 @@ def draw(request):
                 'first': response['containers']['first'],
                 'headerMainColor': data,
                 'primarycolor': primaryColor,
+                'url_reedem': url_reedem
             })
     else:
         response = controller.not_logged()

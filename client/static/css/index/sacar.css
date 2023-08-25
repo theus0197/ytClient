@@ -319,6 +319,10 @@
     width: fit-content;
 }
 
+.btn-confirm a{
+    color: #fff;
+}
+
 @keyframes invisible{
     0%{
         opacity:1;

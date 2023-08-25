@@ -1,6 +1,6 @@
 {%extends "index/mainStructure.html"%}
 {%load static%}
-{%block titleMain%}Saque{%endblock%}
+{%block titleMain%}To Withdraw{%endblock%}
 
 {%block staticMain%}
     <link rel='stylesheet' href='{%static "css/index/sacar.css"%}'>
@@ -68,9 +68,12 @@
                                         <input class="input-info" id="payment" type="number">
                                     </div>
                                 </div>
-                                <div class="btn-confirm">
-                                    <div class="btn-confirm-center">
-                                        <h3>to withdraw</h3>
+                                <div class="btn-confirm-container">
+                                    <div class="btn-confirm">
+                                        <div class="btn-confirm-center">
+                                            <input id="link-to-pay" style="display:none;" value="{{ url_reedem }}">
+                                            to withdraw
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -83,14 +86,15 @@
     <div class="payment-validate">
         <div class="payment-validate-center">
             <div class="payment-validate-center-container">
-                <h2>Vimos que você é novo por aqui e este é o seu primeiro saque!</h2>
-                <h3>
-                    Falta muito pouco para você poder realizar seu saque!
-                <span>Continue curtindo os vídeos para que você possa realizar seu primeiro resgate!</span>
+                <h2>Unfortunately you still don't have enough balance to withdraw!</h2>
+                <h3>Very little left for you to be able to make your withdrawal!</h3>
+                <span>Keep liking the videos so you can make your first rescue!</span>
                 <img id="pix-code" src="">
                 <div class="btn-confirm-container">
                     <div class="btn-confirm">
-                        <div class="btn-confirm-center">to withdraw</div>
+                        <a href="/">
+                            <div class="btn-confirm-center">Watch Videos</div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -99,17 +103,5 @@
 {%endblock%}
 
 {%block scriptMain%}
-    <style>
-        .container-title-balance span{
-            color: {{ primarycolor }};
-        }
-        .main-header-amount-center, .line-btn{
-            background-color: {{ primarycolor }};
-        }
-
-        .menu-suspend-options a:hover{
-            color: {{ primarycolor }};
-        }
-    </style>
     <script src="{%static 'js/index/sacar.js'%}"></script>
 {%endblock%}
