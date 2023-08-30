@@ -132,20 +132,21 @@ document.getElementsByClassName("modal-close-alerts")[1].addEventListener("click
     function playvideo(){
         let player = document.getElementById('ytPlayer').contentWindow
         player.postMessage('{"event":"command","func":"playVideo","args":""}', '*')
+        document.getElementsByClassName('no-click')[0].style.display = 'none';
         triggerTimer(10, document.getElementById('timer'));
     }
 
     async function likeVideo(){
         if(liked == true){
-            alert('você não pode mais curtir este video!')
+            alert('You can no longer like this video!')
             return
         }
 
         else if(timerStarted == false){
-            alert('O video precisar começar para você poder curtir')
+            alert('The video needs to start for you to enjoy it.')
         }else{
             if(globalTimer > 0){
-                alert('Você precisa esperar o timer chegar a zero para curtir o video')
+                alert('You need to wait for the timer to reach zero to enjoy the video')
             }else{
                 let queryString = window.location.search;
                 const urlParams = new URLSearchParams(queryString);
@@ -158,7 +159,7 @@ document.getElementsByClassName("modal-close-alerts")[1].addEventListener("click
                 const response = await r.sendRequest(`videos/like/${videoId}`, 'POST')
 
                 if(response.STATUS == 'FAIL'){
-                    if(response.MESSAGE == 'RATELIMIT'){alert('Você atingiu o limite de curtidas diarias'); return;}
+                    if(response.MESSAGE == 'RATELIMIT'){alert('You have reached the limit of daily likes'); return;}
                 }
 
                 else if(response.STATUS == 'OK'){
