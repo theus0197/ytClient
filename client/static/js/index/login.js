@@ -30,7 +30,7 @@ function login(){
 
             }
         } else {
-            alert('Erro ao realizar chamada!');
+            alert('Error when making call!');
         }
     }
     xhr.send(JSON.stringify(data));

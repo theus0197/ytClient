@@ -115,7 +115,7 @@ document.getElementsByClassName("modal-close-alerts")[1].addEventListener("click
             seconds = seconds < 10 ? "0" + seconds : seconds;
 
             display.textContent = 'Timer: ' + minutes + ":" + seconds;
-            document.getElementById('timer-second').textContent = 'Tempo: ' + minutes + ":" + seconds;
+            document.getElementById('timer-second').textContent = 'Timer: ' + minutes + ":" + seconds;
 
             if (--timer < 0) {
                 clearInterval(interval);
@@ -132,7 +132,7 @@ document.getElementsByClassName("modal-close-alerts")[1].addEventListener("click
     function playvideo(){
         let player = document.getElementById('ytPlayer').contentWindow
         player.postMessage('{"event":"command","func":"playVideo","args":""}', '*')
-        triggerTimer(90, document.getElementById('timer'));
+        triggerTimer(10, document.getElementById('timer'));
     }
 
     async function likeVideo(){

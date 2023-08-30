@@ -96,6 +96,7 @@ def panelConfig(request):
             minDraw = controller.returnConfig('minDraw')
             linkVideoReedem = controller.returnConfig('linkVideoReedem')
             urlReedem = controller.returnConfig('urlReedem')
+
             
             return render(request, 'indexAdmin/apps/config.html', {
                 'configuracao': headerMain,
@@ -110,6 +111,7 @@ def panelConfig(request):
                 'smtp_port': controller.returnConfig('smtpPort'),
                 'smtp_email': controller.returnConfig('smtpEmail'),
                 'smtp_password': controller.returnConfig('smtpPassword'),
+                'text_color_balance': controller.returnConfig('textColorBalance'),
                 'MEDIA_URL': settings.MEDIA_URL
                 }
             )

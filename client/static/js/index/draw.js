@@ -1,6 +1,6 @@
-document.querySelector('#cpf').addEventListener('keypress', function(e) {
+/*document.querySelector('#cpf').addEventListener('keypress', function(e) {
     if(e.target.value.length >= 14) {
-        alert('CPF inválido');
+        alert('Ac');
     }else{
         if(e.target.value !== ''){
             e.target.value = cpf(e.target.value);
@@ -19,7 +19,7 @@ function cpf(v){
     return v;
 }
 
-/*document.querySelector('#payment').addEventListener('keyup', function(e){
+document.querySelector('#payment').addEventListener('keyup', function(e){
     value = document.querySelector('#my-amount').innerText;
     if(e.target.value >= 2000){
         if(e.target.value > parseFloat(value)){
@@ -54,7 +54,7 @@ document.getElementsByClassName('btn-confirm-center')[0].addEventListener('click
     if(amount >= minDrawFloat){
         location.reload = '/';
     }else{
-        alert('Mínimo para saque é de R$', minDraw);
+        alert('Minimum withdrawal is R$', minDraw);
     }
 })
 

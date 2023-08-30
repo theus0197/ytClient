@@ -33,6 +33,7 @@ def index(request, page_id=None):
             'min_draw': min_draw,
             'first': response['containers']['first'],
             'headerMainColor': data,
+            'text_color_balance': pcontroller.returnConfig('textColorBalance'),
             'primarycolor': primaryColor,
             'auth': pcontroller.verify_account(request.user),
             'welcome_popup': response_welcome_popup['welcome_popup'],
@@ -136,15 +137,6 @@ def draw(request):
         primaryColor = controller.returnColor('primaryColor')
         url_reedem = pcontroller.returnConfig('urlReedem')
         if pcontroller.verify_account(request.user):
-            return render(request, 'index/draw.html', {
-                'amount': response['containers']['amount'],
-                'auth': pcontroller.verify_account(request.user),
-                'min_draw': pcontroller.returnConfig('minDraw'),
-                'first': response['containers']['first'],
-                'headerMainColor': data,
-                'primarycolor': primaryColor,
-                'url_reedem': url_reedem
-            })
             return render(request, 'index/draw_super.html', {
                 'amount': response['containers']['amount'],
                 'auth': pcontroller.verify_account(request.user),

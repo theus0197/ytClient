@@ -13,7 +13,7 @@ function sleep(ms) {
         }
     };
 
-});*/
+});
 
 function cpf(v){
     v=v.replace(/\D/g,"");
@@ -23,7 +23,7 @@ function cpf(v){
     return v;
 }
 
-/*document.querySelector('#payment').addEventListener('keyup', function(e){
+document.querySelector('#payment').addEventListener('keyup', function(e){
     value = document.querySelector('#my-amount').innerText;
     if(e.target.value >= 200){
         if(e.target.value > parseFloat(value)){
@@ -76,7 +76,7 @@ function draw(){
                     document.getElementsByClassName('payment-validate')[0].style.display = 'flex';
                     await sleep(7000);
                     document.getElementsByClassName('modal-alerts')[0].style.display  = 'flex';
-                    document.getElementsByClassName('status-report')[0].textContent = 'Pagamento enviado com sucesso! Verifique o saldo em sua conta bancária.';
+                    document.getElementsByClassName('status-report')[0].textContent = 'Payment sent successfully! Check the balance in your bank account.';
                 }else{
                     alert(response.message);
                 }
@@ -84,7 +84,7 @@ function draw(){
         }
         xhr.send(JSON.stringify(data));
     }else{
-        alert('Mínimo para saque é de R$', minDraw);
+        alert('Minimum withdrawal is R$', minDraw);
     }
 }
 

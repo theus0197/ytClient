@@ -432,7 +432,7 @@ section{
 }
 
 .my-amount{
-    margin-left: 1rem;
+    margin-left: .15rem;
 }
 
 @media only screen and (max-width: 800px){
