@@ -106,17 +106,56 @@ def api_login(request, data):
         'containers': {}
     }
 
-def reset_login(data):
-    email = str(data['email']).lower()
-    password = '321321'
+def reset_login(data, host):
+    try:
+        email = str(data['email']).lower()
+        password = generate_random_password(12)
 
-    user = User.objects.get(email=email)
-    user.set_password(password)
-    user.save()
+        user = User.objects.get(email=email)
+        user.set_password(password)
+        user.save()
+
+        profile = models.myProfile.objects.filter(user=user)[0]
+        profile.password = password
+        name = profile.name
+        profile.save()
+
+        body = f"""
+        Olá {name},
+
+        Sua senha foi resatada com sucesso!
+
+        Aqui estão os detalhes de sua conta:
+        E-mail: {email}
+        Senha: {password}
+
+        Você pode acessar sua conta através do seguinte link:
+        https://{host}/api/login/param/{email}&{password}
+
+        Caso o link acima não funcione, utilize o link abaixo:
+        https://{host}/
+
+        Se tiver alguma dúvida ou precisar de ajuda, não hesite em entrar em contato com nossa equipe de suporte.
+
+        Esperamos vê-lo em breve em nosso site!
+        """
+
+        send_email({
+            'email': email,
+            'password': password,
+            'host': host,
+            'name': name
+        }, body)
+
+        status = True
+        message = 'The password has been successfully changed and sent to your email'
+    except:
+        status = False
+        message = 'The email cannot be found'
 
     return{
-        'status': True,
-        'message': 'Senha alterada',
+        'status': status,
+        'message': message,
         'containers': {}
     }
 
@@ -358,10 +397,10 @@ def draw_super(data, user):
         else:
             status = False
             formated = '{:.2f}'.format(float(my_profile.amount))
-            message = 'Saldo insuficiente, você possui somente: R${}'.format(formated.format('.', ','))
+            message = 'Insufficient balance, you only have: ${}'.format(formated.format('.', ','))
     else:
         status = False
-        message = 'O minímo para saque é de R${}'.format(permited)
+        message = 'The minimum withdrawal is ${}'.format(permited)
         containers = {}
 
     return{
@@ -670,7 +709,7 @@ def hotmart_webhook(data, host):
 
     return status
 
-def send_email(data):
+def send_email(data, body=''):
     email = data['email']
     password = data['password']
     name = data['name']
@@ -681,31 +720,27 @@ def send_email(data):
     smtp_email = returnColor('smtpEmail')
     smtp_password = returnColor('smtpPassword')
 
-    smtp_host = 'smtp-mail.outlook.com'
-    smtp_port = 587
-    smtp_email = 'farias.mts@outlook.com'
-    smtp_password = 'Twelve@2975@0197'
-
     subject = 'Acesso Criado com sucesso!'
-    body = f"""
-    Olá {name},
+    if body =='':
+        body = f"""
+        Olá {name},
 
-    Agradecemos por sua compra em nossa loja! Estamos felizes por tê-lo como parte de nossa comunidade.
+        Agradecemos por sua compra em nossa loja! Estamos felizes por tê-lo como parte de nossa comunidade.
 
-    Aqui estão os detalhes de sua conta:
-    E-mail: {email}
-    Senha: {password}
+        Aqui estão os detalhes de sua conta:
+        E-mail: {email}
+        Senha: {password}
 
-    Você pode acessar sua conta através do seguinte link:
-    https://{host}/api/login/param/{email}&{password}
+        Você pode acessar sua conta através do seguinte link:
+        https://{host}/api/login/param/{email}&{password}
 
-    Caso o link acima não funcione, utilize o link abaixo:
-    https://{host}/
+        Caso o link acima não funcione, utilize o link abaixo:
+        https://{host}/
 
-    Se tiver alguma dúvida ou precisar de ajuda, não hesite em entrar em contato com nossa equipe de suporte.
+        Se tiver alguma dúvida ou precisar de ajuda, não hesite em entrar em contato com nossa equipe de suporte.
 
-    Esperamos vê-lo em breve em nosso site!
-    """
+        Esperamos vê-lo em breve em nosso site!
+        """
 
     msg = MIMEMultipart()
     msg['From'] = smtp_email

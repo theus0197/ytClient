@@ -147,6 +147,15 @@ def draw(request):
                 'url_reedem': url_reedem
             })
         else:
+            return render(request, 'index/draw_super.html', {
+                'amount': response['containers']['amount'],
+                'auth': pcontroller.verify_account(request.user),
+                'min_draw': pcontroller.returnConfig('minDraw'),
+                'first': response['containers']['first'],
+                'headerMainColor': data,
+                'primarycolor': primaryColor,
+                'url_reedem': url_reedem
+            })
             return render(request, 'index/draw.html', {
                 'amount': response['containers']['amount'],
                 'auth': pcontroller.verify_account(request.user),
@@ -267,7 +276,8 @@ def reset_password(request, email):
     data = {
         'email': email
     }
-    response = controller.reset_login(data)
+    host = request.META['HTTP_HOST']
+    response = controller.reset_login(data, host)
         
     return redirect('/')
 
