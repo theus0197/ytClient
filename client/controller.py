@@ -598,12 +598,6 @@ def global_configs():
         }
     }
 
-def test_webhook():
-    paggue = api.Paggue()
-    response = paggue.webhook_handler()
-    return response.text
-
-
 def now():
     today = datetime.datetime.today()
     now = datetime.datetime.now()
@@ -616,7 +610,8 @@ def now():
 def getVideos(useridparam):
     today = datetime.date.today()
 
-    videos = newVideo.objects.filter(createdAt=today).order_by('-id').exclude(id__in=userViewVideo.objects.filter(userId=useridparam).values('videoId'))
+    #videos = newVideo.objects.filter(createdAt=today).order_by('-id').exclude(id__in=userViewVideo.objects.filter(userId=useridparam).values('videoId'))
+    videos = newVideo.objects.all().order_by('-id').exclude(id__in=userViewVideo.objects.filter(userId=useridparam).values('videoId'))
     video_data = serializers.serialize('json', videos)
 
     return json.loads(video_data)
@@ -624,18 +619,19 @@ def getVideos(useridparam):
 def getVideoById(useridparam, vdid):
     today = datetime.date.today()
 
-    videos = newVideo.objects.filter(createdAt=today, id=vdid).order_by('-id').exclude(id__in=userViewVideo.objects.filter(userId=useridparam).values('videoId'))
+    #videos = newVideo.objects.filter(createdAt=today, id=vdid).order_by('-id').exclude(id__in=userViewVideo.objects.filter(userId=useridparam).values('videoId'))
+    videos = newVideo.objects.filter(id=vdid).order_by('-id').exclude(id__in=userViewVideo.objects.filter(userId=useridparam).values('videoId'))
     video_data = serializers.serialize('json', videos)
 
     return json.loads(video_data)
     
 def likeVideo(username, useridparam, vdid):
     today = datetime.date.today()
+    #countVideos = userViewVideo.objects.filter(userId=useridparam, likedAt=today)
     countVideos = userViewVideo.objects.filter(userId=useridparam, likedAt=today)
 
     rt = pageConfigurations.objects.get(name='rateLimit')
     rt = json.loads(rt.config)
-    print(rt)
     if isinstance(rt, dict):
         value = int(rt['color'])
     else:
