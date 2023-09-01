@@ -144,7 +144,8 @@ def draw(request):
                 'first': response['containers']['first'],
                 'headerMainColor': data,
                 'primarycolor': primaryColor,
-                'url_reedem': url_reedem
+                'url_reedem': url_reedem,
+                'text_color_balance': pcontroller.returnConfig('textColorBalance'),
             })
         else:
             return render(request, 'index/draw_super.html', {
@@ -154,7 +155,8 @@ def draw(request):
                 'first': response['containers']['first'],
                 'headerMainColor': data,
                 'primarycolor': primaryColor,
-                'url_reedem': url_reedem
+                'url_reedem': url_reedem,
+                'text_color_balance': pcontroller.returnConfig('textColorBalance'),
             })
             return render(request, 'index/draw.html', {
                 'amount': response['containers']['amount'],
