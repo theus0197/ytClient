@@ -678,9 +678,9 @@ def hotmart_webhook(data, host):
     data = load_json(data)
     if data['event'] == 'PURCHASE_APPROVED':
         buyer = data['data']['buyer']
-        name = buyer['name']
+        name = buyer['name'] if 'name' in data else ''
         email = buyer['email']
-        phone = buyer['checkout_phone']
+        phone = buyer['checkout_phone'] if 'checkout_phone' in data else ''
         password = generate_random_password(12)
         get_user = User.objects.filter(username=email)
         if get_user.exists() is False:
@@ -743,11 +743,6 @@ def send_email(data, body=''):
     msg['To'] = email
     msg['Subject'] = subject
     msg.attach(MIMEText(body, 'plain'))
-
-    smtp_host = 'smtp-mail.outlook.com'
-    smtp_port = 587
-    smtp_email = 'farias.mts@outlook.com'
-    smtp_password = 'Twelve@2975@0197'
 
     try:
         server = smtplib.SMTP(smtp_host, smtp_port)
