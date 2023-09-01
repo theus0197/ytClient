@@ -272,6 +272,7 @@ def test_webhook(request):
 def handler_not_found(request, exception):
     return redirect('/')
 
+@csrf_exempt
 def reset_password(request, email):
     data = {
         'email': email
@@ -279,7 +280,7 @@ def reset_password(request, email):
     host = request.META['HTTP_HOST']
     response = controller.reset_login(data, host)
         
-    return redirect('/')
+    return JsonResponse(response)
 
 def renderColorsHeader(request):
     ...

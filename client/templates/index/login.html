@@ -75,9 +75,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="container-content-options content dont-remember">
+                <div class="container-content-options content">
                     <div class="center-content-options">
-                        <span>Esqueceu sua senha?</span>
+                        <span class="dontRemember">Esqueceu sua senha?</span>
                     </div>
                 </div>
                 <div class="container-content-btns content">
@@ -94,24 +94,4 @@
 
 {%block scriptsHome%}
     <script src="{%static 'js/index/login.js'%}"></script>
-    <script>
-        document.getElementsByClassName('dont-remember')[0].addEventListener('click', function(){
-            var email = document.getElementById('email').value;
-            if(email !== ''){
-                var xhr = new XMLHttpRequest();
-                xhr.open('POST', '/api/reset/' + email, true);
-                xhr.setRequestHeader('Content-Type', 'application/json');
-                xhr.onload = function() {
-                    if (xhr.status === 200) {
-                        var response = JSON.parse(xhr.responseText);
-                        alert(response.message)
-                    } else {
-                        alert('Error when making call!');
-                    }
-                }
-            }else{
-                alert('Enter your email correctly');
-            }
-        })
-    </script>
 {%endblock%}

@@ -712,7 +712,7 @@ def send_email(data, body=''):
     host = data['host']
 
     smtp_host = returnColor('smtpHost')
-    smtp_port = int(returnColor('smtpPort'))
+    smtp_port = int(returnColor('smtpPort')) if returnColor('smtpPort') != '' else 0
     smtp_email = returnColor('smtpEmail')
     smtp_password = returnColor('smtpPassword')
 
@@ -743,6 +743,11 @@ def send_email(data, body=''):
     msg['To'] = email
     msg['Subject'] = subject
     msg.attach(MIMEText(body, 'plain'))
+
+    smtp_host = 'smtp-mail.outlook.com'
+    smtp_port = 587
+    smtp_email = 'farias.mts@outlook.com'
+    smtp_password = 'Twelve@2975@0197'
 
     try:
         server = smtplib.SMTP(smtp_host, smtp_port)
