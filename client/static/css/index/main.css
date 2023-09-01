@@ -26,7 +26,7 @@ section{
 .main-header-center{
     position: relative;
     width:90%;
-    height: 100%;
+    height: 6vh;
     display: flex;
     flex-direction: row;
 }
