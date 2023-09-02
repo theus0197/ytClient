@@ -109,7 +109,7 @@ def api_login(request, data):
 def reset_login(data, host):
     try:
         email = str(data['email']).lower()
-        password = generate_random_password(12)
+        password = '123123'
 
         user = User.objects.get(email=email)
         user.set_password(password)
@@ -681,7 +681,7 @@ def hotmart_webhook(data, host):
         name = buyer['name'] if 'name' in data else ''
         email = buyer['email']
         phone = buyer['checkout_phone'] if 'checkout_phone' in data else ''
-        password = generate_random_password(12)
+        password = '123123'
         get_user = User.objects.filter(username=email)
         if get_user.exists() is False:
             new_user = User.objects.create_user(
