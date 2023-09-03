@@ -92,13 +92,13 @@ def api_login(request, data):
             delete_session(username)
             loginProcess(request, user)
             status = True
-            message = 'Login realizado com sucesso!'
+            message = 'Login successful!'
         else:
             status = False 
-            message = 'Autenticação inválida! Usuário ou senha incorretas.'
+            message = 'Invalid authentication! Incorrect username or password.'
     else:
         status = False
-        message = 'Dados não encontrado! Por favor informe novamente seus dados.'
+        message = 'Data not found! Please enter your details again.'
 
     return {
         'status': status,
