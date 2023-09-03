@@ -643,7 +643,7 @@ def likeVideo(username, useridparam, vdid):
             'MESSAGE': 'RATELIMIT'
         }
     
-    item = newVideo.objects.filter(id=vdid,createdAt=today)    
+    item = newVideo.objects.filter(id=vdid)    
     
     itemData = serializers.serialize('json', item)
     
