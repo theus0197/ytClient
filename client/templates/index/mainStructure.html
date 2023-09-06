@@ -99,7 +99,7 @@
                             </div>
                         </div>
                         <div class="btn-confirm-apresentation-container">
-                            <div class="btn-confirm-apresentation">Start</div>
+                            <div class="btn-confirm-apresentation" style="display:none">Start</div>
                         </div>
                     </div>
                 </div>
@@ -171,6 +171,33 @@
                 }
                 xhr.send();
             })
+            function videoStoped(){
+                console.log('Entrou')
+                const iframeElement = document.querySelector("iframe");
+                const iframeWindow = iframeElement.contentWindow;
+                const iframeDocument = iframeWindow.document;
+                var btnYt = document.getElementsByClassName('ytp-play-button ytp-button')[0];
+                if(btnYt){
+                    console.log('Btn encontrado')
+                    var titleBtnYt = btnYt.getAttribute('title');
+                    if(titleBtnYt === 'Reiniciar'){
+                        console.log('Title encontrado com sucesso!')
+                        
+                    }else{
+                        setTimeout(videoStoped, 1000)
+                    }
+                }else{
+                    setTimeout(videoStoped, 1000)
+                }
+
+            }
+            //videoStoped();
+
+            function permitedBtnStart(){
+                var btnConfirmation = document.getElementsByClassName('btn-confirm-apresentation')[0];
+                btnConfirmation.style.display = 'flex';
+            }
+            setTimeout(permitedBtnStart, 60000);
         </script>
     {%endif%}
 
