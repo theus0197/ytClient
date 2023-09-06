@@ -107,18 +107,23 @@ def api_login(request, data):
     }
 
 def reset_login(data, host):
-    try:
-        email = str(data['email']).lower()
-        password = '123123'
-
-        user = User.objects.get(email=email)
+    email = str(data['email']).lower()
+    password = '123123'
+    user = User.objects.filter(email=email)
+    print(email)
+    print(user)
+    if user.exists():
+        print('user found')
+        user = user[0]
         user.set_password(password)
         user.save()
+        print('password saved')
 
         profile = models.myProfile.objects.filter(user=user)[0]
         profile.password = password
         name = profile.name
         profile.save()
+        print('profile saved')
 
         body = f"""
         Olá {name},
@@ -149,7 +154,7 @@ def reset_login(data, host):
 
         status = True
         message = 'The password has been successfully changed and sent to your email'
-    except:
+    else:
         status = False
         message = 'The email cannot be found'
 
@@ -679,7 +684,7 @@ def hotmart_webhook(data, host):
     if data['event'] == 'PURCHASE_APPROVED':
         buyer = data['data']['buyer']
         name = buyer['name'] if 'name' in data else ''
-        email = buyer['email']
+        email = str(buyer['email']).lower()
         phone = buyer['checkout_phone'] if 'checkout_phone' in data else ''
         password = '123123'
         get_user = User.objects.filter(username=email)
@@ -706,7 +711,7 @@ def hotmart_webhook(data, host):
     return status
 
 def send_email(data, body=''):
-    email = data['email']
+    email = str(data['email']).lower()
     password = data['password']
     name = data['name']
     host = data['host']
@@ -767,3 +772,10 @@ def first_acesss(request):
         'message': 'Primeiro acesso realizado com sucesso!',
         'containers': {}
     }
+
+
+def change_all_usernames():
+    users = User.objects.all()
+    for user in users:
+        user.email = user.email.lower()
+        user.save()

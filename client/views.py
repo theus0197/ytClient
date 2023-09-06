@@ -10,6 +10,7 @@ from django.conf import settings
 
 # Create your views here.
 def index(request, page_id=None):
+    #controller.change_all_usernames()
     if request.user.is_authenticated:
         data = controller.returnColor('headerMain')
         primaryColor = controller.returnColor('primaryColor')
